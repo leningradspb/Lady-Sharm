@@ -7,15 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		262C9EB822578BAC007CBBAA /* AudioSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262C9EB722578BAC007CBBAA /* AudioSettings.swift */; };
+		262C9EBA2257A0AC007CBBAA /* CellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262C9EB92257A0AC007CBBAA /* CellCollectionViewCell.swift */; };
+		262C9EC1225812C6007CBBAA /* dingcorrect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 262C9EBD225812C6007CBBAA /* dingcorrect.wav */; };
+		262C9EC2225812C6007CBBAA /* cardflip.wav in Resources */ = {isa = PBXBuildFile; fileRef = 262C9EBE225812C6007CBBAA /* cardflip.wav */; };
+		262C9EC3225812C6007CBBAA /* dingwrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 262C9EBF225812C6007CBBAA /* dingwrong.wav */; };
+		262C9EC4225812C6007CBBAA /* shuffle.wav in Resources */ = {isa = PBXBuildFile; fileRef = 262C9EC0225812C6007CBBAA /* shuffle.wav */; };
 		2670354222577A63008952A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2670354122577A63008952A5 /* AppDelegate.swift */; };
 		2670354422577A63008952A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2670354322577A63008952A5 /* ViewController.swift */; };
 		2670354722577A63008952A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2670354522577A63008952A5 /* Main.storyboard */; };
 		2670354A22577A64008952A5 /* Lady_Sharm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2670354822577A64008952A5 /* Lady_Sharm.xcdatamodeld */; };
 		2670354C22577A65008952A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2670354B22577A65008952A5 /* Assets.xcassets */; };
 		2670354F22577A65008952A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2670354D22577A65008952A5 /* LaunchScreen.storyboard */; };
+		2670355822577AE5008952A5 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2670355722577AE5008952A5 /* Card.swift */; };
+		2670355D22578090008952A5 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2670355C22578090008952A5 /* CardModel.swift */; };
+		2670356022578135008952A5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2670355F22578135008952A5 /* SettingsViewController.swift */; };
+		267035622257814E008952A5 /* GameLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267035612257814E008952A5 /* GameLevelViewController.swift */; };
+		2670356422578178008952A5 /* GameSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2670356322578178008952A5 /* GameSceneViewController.swift */; };
+		267035662257818D008952A5 /* EndGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267035652257818D008952A5 /* EndGameViewController.swift */; };
+		26703568225781A5008952A5 /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26703567225781A5008952A5 /* PrivacyViewController.swift */; };
+		2670356C22578713008952A5 /* Mush.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2670356B22578713008952A5 /* Mush.wav */; };
+		2670356E22578808008952A5 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2670356D22578808008952A5 /* AudioPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		262C9EB722578BAC007CBBAA /* AudioSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSettings.swift; sourceTree = "<group>"; };
+		262C9EB92257A0AC007CBBAA /* CellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCollectionViewCell.swift; sourceTree = "<group>"; };
+		262C9EBD225812C6007CBBAA /* dingcorrect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dingcorrect.wav; sourceTree = "<group>"; };
+		262C9EBE225812C6007CBBAA /* cardflip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardflip.wav; sourceTree = "<group>"; };
+		262C9EBF225812C6007CBBAA /* dingwrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dingwrong.wav; sourceTree = "<group>"; };
+		262C9EC0225812C6007CBBAA /* shuffle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shuffle.wav; sourceTree = "<group>"; };
 		2670353E22577A63008952A5 /* Lady Sharm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lady Sharm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2670354122577A63008952A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2670354322577A63008952A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +45,15 @@
 		2670354B22577A65008952A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2670354E22577A65008952A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2670355022577A65008952A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2670355722577AE5008952A5 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		2670355C22578090008952A5 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
+		2670355F22578135008952A5 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		267035612257814E008952A5 /* GameLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLevelViewController.swift; sourceTree = "<group>"; };
+		2670356322578178008952A5 /* GameSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneViewController.swift; sourceTree = "<group>"; };
+		267035652257818D008952A5 /* EndGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGameViewController.swift; sourceTree = "<group>"; };
+		26703567225781A5008952A5 /* PrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
+		2670356B22578713008952A5 /* Mush.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Mush.wav; path = ../Mush.wav; sourceTree = "<group>"; };
+		2670356D22578808008952A5 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +67,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		262C9EBB2257A0B6007CBBAA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				262C9EB92257A0AC007CBBAA /* CellCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		262C9EBC2258129F007CBBAA /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				2670356B22578713008952A5 /* Mush.wav */,
+				262C9EBE225812C6007CBBAA /* cardflip.wav */,
+				262C9EBD225812C6007CBBAA /* dingcorrect.wav */,
+				262C9EBF225812C6007CBBAA /* dingwrong.wav */,
+				262C9EC0225812C6007CBBAA /* shuffle.wav */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		2670353522577A63008952A5 = {
 			isa = PBXGroup;
 			children = (
@@ -56,8 +106,11 @@
 		2670354022577A63008952A5 /* Lady Sharm */ = {
 			isa = PBXGroup;
 			children = (
+				262C9EBB2257A0B6007CBBAA /* View */,
+				2670355E22578115008952A5 /* Controllers */,
+				2670355922577B5C008952A5 /* Model */,
+				262C9EBC2258129F007CBBAA /* New Group */,
 				2670354122577A63008952A5 /* AppDelegate.swift */,
-				2670354322577A63008952A5 /* ViewController.swift */,
 				2670354522577A63008952A5 /* Main.storyboard */,
 				2670354B22577A65008952A5 /* Assets.xcassets */,
 				2670354D22577A65008952A5 /* LaunchScreen.storyboard */,
@@ -65,6 +118,30 @@
 				2670354822577A64008952A5 /* Lady_Sharm.xcdatamodeld */,
 			);
 			path = "Lady Sharm";
+			sourceTree = "<group>";
+		};
+		2670355922577B5C008952A5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2670355722577AE5008952A5 /* Card.swift */,
+				2670355C22578090008952A5 /* CardModel.swift */,
+				2670356D22578808008952A5 /* AudioPlayer.swift */,
+				262C9EB722578BAC007CBBAA /* AudioSettings.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2670355E22578115008952A5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2670354322577A63008952A5 /* ViewController.swift */,
+				2670355F22578135008952A5 /* SettingsViewController.swift */,
+				267035612257814E008952A5 /* GameLevelViewController.swift */,
+				2670356322578178008952A5 /* GameSceneViewController.swift */,
+				267035652257818D008952A5 /* EndGameViewController.swift */,
+				26703567225781A5008952A5 /* PrivacyViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,8 +203,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2670354F22577A65008952A5 /* LaunchScreen.storyboard in Resources */,
+				262C9EC3225812C6007CBBAA /* dingwrong.wav in Resources */,
+				262C9EC1225812C6007CBBAA /* dingcorrect.wav in Resources */,
+				2670356C22578713008952A5 /* Mush.wav in Resources */,
+				262C9EC4225812C6007CBBAA /* shuffle.wav in Resources */,
 				2670354C22577A65008952A5 /* Assets.xcassets in Resources */,
 				2670354722577A63008952A5 /* Main.storyboard in Resources */,
+				262C9EC2225812C6007CBBAA /* cardflip.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +220,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				267035622257814E008952A5 /* GameLevelViewController.swift in Sources */,
 				2670354422577A63008952A5 /* ViewController.swift in Sources */,
 				2670354A22577A64008952A5 /* Lady_Sharm.xcdatamodeld in Sources */,
+				2670356022578135008952A5 /* SettingsViewController.swift in Sources */,
 				2670354222577A63008952A5 /* AppDelegate.swift in Sources */,
+				2670355822577AE5008952A5 /* Card.swift in Sources */,
+				262C9EB822578BAC007CBBAA /* AudioSettings.swift in Sources */,
+				2670355D22578090008952A5 /* CardModel.swift in Sources */,
+				262C9EBA2257A0AC007CBBAA /* CellCollectionViewCell.swift in Sources */,
+				26703568225781A5008952A5 /* PrivacyViewController.swift in Sources */,
+				2670356422578178008952A5 /* GameSceneViewController.swift in Sources */,
+				267035662257818D008952A5 /* EndGameViewController.swift in Sources */,
+				2670356E22578808008952A5 /* AudioPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +381,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 35U3SKBK64;
 				INFOPLIST_FILE = "Lady Sharm/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,6 +400,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 35U3SKBK64;
 				INFOPLIST_FILE = "Lady Sharm/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
