@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import AVFoundation
 
 class GameSceneViewController: UIViewController {
     
+    private var observer: NSObjectProtocol?
+    private var audioSettings = AudioSettings()
     
+    var soundManager = AudioPlayer()
     
     var timer = Timer()
     
@@ -22,7 +26,7 @@ class GameSceneViewController: UIViewController {
     // переменная для определения перевернута карта или нет
     var firstCardIsFlippedIndex: IndexPath?
     
-    var secondsForTimer = 60
+    var secondsForTimer = 50
     var currentPoints = 0
     
 
@@ -30,19 +34,23 @@ class GameSceneViewController: UIViewController {
         menuBO.isHidden = false
         continueBO.isHidden = false
         collectionView.isHidden = true
+        pauseLabel.isHidden = false
         timer.invalidate()
     }
     @IBAction func continueGame(_ sender: UIButton) {
         menuBO.isHidden = true
         continueBO.isHidden = true
         collectionView.isHidden = false
+        pauseLabel.isHidden = true
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerFunc), userInfo: nil, repeats: true)
+        
     }
     @IBOutlet weak var continueBO: UIButton!
     @IBOutlet weak var menuBO: UIButton!
     @IBOutlet weak var pauseLabel: UILabel!
     @IBOutlet weak var pointsLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    
     
     
     override func viewDidLoad() {
@@ -58,7 +66,18 @@ class GameSceneViewController: UIViewController {
         
       //  timerLabel.text = String(secondsForTimer)
         
+     /*   if audioSettings.isSoundOn == false {
+            soundManager.stopSound()
+         } // не работает */
+        
+        setupColors()
     } // конец viewDidLoad
+    
+    func setupColors() {
+        pointsLabel.textColor = UIColor(red: 250/255, green: 253/255, blue: 2/255, alpha: 1)
+        timerLabel.textColor = UIColor(red: 250/255, green: 253/255, blue: 2/255, alpha: 1)
+        pauseLabel.textColor = UIColor(red: 250/255, green: 253/255, blue: 2/255, alpha: 1)
+    }
     
     @objc func timerFunc() {
         
@@ -102,7 +121,9 @@ class GameSceneViewController: UIViewController {
     
     @IBOutlet weak var timerLabel: UILabel!
     
-}
+   
+    
+} // конец класса
 
 extension GameSceneViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -133,8 +154,14 @@ extension GameSceneViewController: UICollectionViewDelegate, UICollectionViewDat
         // карта, которую выбрал юзер
         let card = cardArray[indexPath.row]
         
+        
+        
         if card.isFlipped == false && card.isMatched == false{
             cell.flip()
+            // звук
+            if audioSettings.isSoundOn {
+                soundManager.playSound(.flip)
+            }
             // установить нвоый статус
             card.isFlipped = true
             
@@ -149,6 +176,8 @@ extension GameSceneViewController: UICollectionViewDelegate, UICollectionViewDat
             }
             
         }
+        
+        
         
     } // конец дидСелектАйтем
     
@@ -165,7 +194,9 @@ extension GameSceneViewController: UICollectionViewDelegate, UICollectionViewDat
         
       if cardOne.imageName == cardTwo.imageName {
             // совпадение
-            
+        if audioSettings.isSoundOn {
+            soundManager.playSound(.match)
+        }
             // статусы карт
         cardOne.isMatched = true
         cardTwo.isMatched = true
@@ -181,6 +212,9 @@ extension GameSceneViewController: UICollectionViewDelegate, UICollectionViewDat
         
         } else {
             //нет совпадения
+        if audioSettings.isSoundOn {
+            soundManager.playSound(.nomatch)
+        }
             
             // статус карт
         cardOne.isFlipped = false
@@ -216,7 +250,32 @@ extension GameSceneViewController: UICollectionViewDelegate, UICollectionViewDat
         return CGSize(width: 200, height: 70)
         
     } */
-    
-    
+
     
 } // конец екстеншена
+
+extension GameSceneViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        
+        if cardArray.endIndex == 16 {
+           // return CGSize(width: 90, height: 90)
+            let widthSmall = collectionView.bounds.width
+            let cellWidthSmall = (widthSmall - 110) / 4
+            
+            return  CGSize(width: cellWidthSmall, height: cellWidthSmall / 0.9)
+        }
+        
+       // return CGSize(width: 65, height: 65)
+        
+       /* let width = collectionView.bounds.width
+        let cellWidth = (width - 30) / 6
+        
+      return  CGSize(width: cellWidth, height: cellWidth / 0.6) */
+        let width = collectionView.bounds.width
+        let cellWidth = (width - 110) / 6
+        
+        return  CGSize(width: cellWidth, height: cellWidth / 0.9)
+        
+    }
+}

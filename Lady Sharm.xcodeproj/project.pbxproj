@@ -26,8 +26,15 @@
 		2670356422578178008952A5 /* GameSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2670356322578178008952A5 /* GameSceneViewController.swift */; };
 		267035662257818D008952A5 /* EndGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267035652257818D008952A5 /* EndGameViewController.swift */; };
 		26703568225781A5008952A5 /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26703567225781A5008952A5 /* PrivacyViewController.swift */; };
-		2670356C22578713008952A5 /* Mush.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2670356B22578713008952A5 /* Mush.wav */; };
 		2670356E22578808008952A5 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2670356D22578808008952A5 /* AudioPlayer.swift */; };
+		2679DCBD225B4D040080BA26 /* Mush.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2679DCBC225B4D040080BA26 /* Mush.wav */; };
+		2679DCC4225B79280080BA26 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2679DCBF225B79280080BA26 /* Roboto-Thin.ttf */; };
+		2679DCC5225B79280080BA26 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2679DCC0225B79280080BA26 /* Roboto-Bold.ttf */; };
+		2679DCC6225B79280080BA26 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2679DCC1225B79280080BA26 /* Roboto-Italic.ttf */; };
+		2679DCC7225B79280080BA26 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2679DCC2225B79280080BA26 /* Roboto-Light.ttf */; };
+		2679DCC8225B79280080BA26 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2679DCC3225B79280080BA26 /* Roboto-Medium.ttf */; };
+		2679DCCA225B7A900080BA26 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2679DCC9225B7A900080BA26 /* Roboto-Regular.ttf */; };
+		2688233E225A26BF00D29FA9 /* Scores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2688233D225A26BF00D29FA9 /* Scores.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,8 +59,15 @@
 		2670356322578178008952A5 /* GameSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneViewController.swift; sourceTree = "<group>"; };
 		267035652257818D008952A5 /* EndGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGameViewController.swift; sourceTree = "<group>"; };
 		26703567225781A5008952A5 /* PrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
-		2670356B22578713008952A5 /* Mush.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Mush.wav; path = ../Mush.wav; sourceTree = "<group>"; };
 		2670356D22578808008952A5 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		2679DCBC225B4D040080BA26 /* Mush.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Mush.wav; sourceTree = "<group>"; };
+		2679DCBF225B79280080BA26 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		2679DCC0225B79280080BA26 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		2679DCC1225B79280080BA26 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
+		2679DCC2225B79280080BA26 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		2679DCC3225B79280080BA26 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		2679DCC9225B7A900080BA26 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		2688233D225A26BF00D29FA9 /* Scores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scores.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,16 +89,16 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		262C9EBC2258129F007CBBAA /* New Group */ = {
+		262C9EBC2258129F007CBBAA /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				2670356B22578713008952A5 /* Mush.wav */,
+				2679DCBC225B4D040080BA26 /* Mush.wav */,
 				262C9EBE225812C6007CBBAA /* cardflip.wav */,
 				262C9EBD225812C6007CBBAA /* dingcorrect.wav */,
 				262C9EBF225812C6007CBBAA /* dingwrong.wav */,
 				262C9EC0225812C6007CBBAA /* shuffle.wav */,
 			);
-			path = "New Group";
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 		2670353522577A63008952A5 = {
@@ -109,7 +123,8 @@
 				262C9EBB2257A0B6007CBBAA /* View */,
 				2670355E22578115008952A5 /* Controllers */,
 				2670355922577B5C008952A5 /* Model */,
-				262C9EBC2258129F007CBBAA /* New Group */,
+				262C9EBC2258129F007CBBAA /* Sounds */,
+				2679DCBE225B78C90080BA26 /* Fonts */,
 				2670354122577A63008952A5 /* AppDelegate.swift */,
 				2670354522577A63008952A5 /* Main.storyboard */,
 				2670354B22577A65008952A5 /* Assets.xcassets */,
@@ -127,6 +142,7 @@
 				2670355C22578090008952A5 /* CardModel.swift */,
 				2670356D22578808008952A5 /* AudioPlayer.swift */,
 				262C9EB722578BAC007CBBAA /* AudioSettings.swift */,
+				2688233D225A26BF00D29FA9 /* Scores.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -142,6 +158,19 @@
 				26703567225781A5008952A5 /* PrivacyViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2679DCBE225B78C90080BA26 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2679DCC0225B79280080BA26 /* Roboto-Bold.ttf */,
+				2679DCC1225B79280080BA26 /* Roboto-Italic.ttf */,
+				2679DCC2225B79280080BA26 /* Roboto-Light.ttf */,
+				2679DCC9225B7A900080BA26 /* Roboto-Regular.ttf */,
+				2679DCC3225B79280080BA26 /* Roboto-Medium.ttf */,
+				2679DCBF225B79280080BA26 /* Roboto-Thin.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,14 +231,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2679DCC8225B79280080BA26 /* Roboto-Medium.ttf in Resources */,
 				2670354F22577A65008952A5 /* LaunchScreen.storyboard in Resources */,
+				2679DCBD225B4D040080BA26 /* Mush.wav in Resources */,
+				2679DCC7225B79280080BA26 /* Roboto-Light.ttf in Resources */,
+				2679DCC5225B79280080BA26 /* Roboto-Bold.ttf in Resources */,
 				262C9EC3225812C6007CBBAA /* dingwrong.wav in Resources */,
 				262C9EC1225812C6007CBBAA /* dingcorrect.wav in Resources */,
-				2670356C22578713008952A5 /* Mush.wav in Resources */,
 				262C9EC4225812C6007CBBAA /* shuffle.wav in Resources */,
+				2679DCCA225B7A900080BA26 /* Roboto-Regular.ttf in Resources */,
 				2670354C22577A65008952A5 /* Assets.xcassets in Resources */,
 				2670354722577A63008952A5 /* Main.storyboard in Resources */,
 				262C9EC2225812C6007CBBAA /* cardflip.wav in Resources */,
+				2679DCC6225B79280080BA26 /* Roboto-Italic.ttf in Resources */,
+				2679DCC4225B79280080BA26 /* Roboto-Thin.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +265,7 @@
 				2670355D22578090008952A5 /* CardModel.swift in Sources */,
 				262C9EBA2257A0AC007CBBAA /* CellCollectionViewCell.swift in Sources */,
 				26703568225781A5008952A5 /* PrivacyViewController.swift in Sources */,
+				2688233E225A26BF00D29FA9 /* Scores.swift in Sources */,
 				2670356422578178008952A5 /* GameSceneViewController.swift in Sources */,
 				267035662257818D008952A5 /* EndGameViewController.swift in Sources */,
 				2670356E22578808008952A5 /* AudioPlayer.swift in Sources */,

@@ -12,6 +12,7 @@ class GameLevelViewController: UIViewController {
     
     let model = CardModel()
     
+    @IBOutlet weak var lableValueLevel: UILabel!
     @IBAction func toGame(_ sender: UIButton) {
         
         if  normalImage.image == UIImage(named: "EmptyselectionControlRadioOnDisabled") &&
@@ -54,7 +55,7 @@ class GameLevelViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupColorsOfButtons()
         stratConditionsOfButtons()
     }
@@ -74,6 +75,8 @@ class GameLevelViewController: UIViewController {
         normalBO.layer.cornerRadius = 5
         normalBO.layer.borderWidth = 1.5
         normalBO.layer.borderColor = UIColor(red: 233/255, green: 156/255, blue: 1/255, alpha: 1).cgColor
+        
+        lableValueLevel.textColor = UIColor(red: 250/255, green: 253/255, blue: 2/255, alpha: 1)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -84,10 +87,10 @@ class GameLevelViewController: UIViewController {
             dvc.cardArray = model.getCardSixteenCards()
             } else if hardImage.image == UIImage(named: "selectionControlRadioOnDisabled") {
                 dvc.cardArray = model.getCardsTwentyFour()
-                dvc.secondsForTimer = 1
+                dvc.secondsForTimer = 75
             } else if extreemImage.image == UIImage(named: "selectionControlRadioOnDisabled") {
                 dvc.cardArray = model.getCardsFortyEight()
-                dvc.secondsForTimer = 1
+                dvc.secondsForTimer = 111
             }
         }
     }

@@ -10,9 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
     
+   // var score = Scores()
+    
     let key = "keyCurrent"
     
-    var currentPoints = 0
+   // var currentPoints = 0
+    var currentPoints = Scores().score
     
     var lableFromSegue = UILabel()
     
@@ -21,7 +24,9 @@ class ViewController: UIViewController {
     private var audioSettings = AudioSettings()
     private func setupAudioPlayer() {
         if audioSettings.isMusicOn {
+            
             audioPlayer.playMusic()
+            
         } else {
         audioPlayer.stopMusic()
         }
@@ -36,10 +41,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        allPointsLabel.textColor = UIColor(red: 250/255, green: 253/255, blue: 2/255, alpha: 1)
         
-        allPointsLabel.text = "ОЧКИ: \(currentPoints)"
+        UserDefaults.standard.integer(forKey: "Scores")
+        print(UserDefaults.standard.integer(forKey: "Scores"))
+       allPointsLabel.text = "ОЧКИ: \(UserDefaults.standard.integer(forKey: "Scores"))"
         
-        UserDefaults.standard.set(currentPoints, forKey: key)
         observer = NotificationCenter.default.addObserver(forName: Notification.Name.AudioSettingsDidChange, object: self.audioSettings, queue: OperationQueue.main) { [unowned self] (notification) in
             self.setupAudioPlayer()
         }
@@ -53,10 +60,17 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didUnwindSegue(_ segue: UIStoryboardSegue) {
+        guard let lblFromUnwind = segue.source as? EndGameViewController else { return }
+        UserDefaults.standard.integer(forKey: "Scores")
+        
+        currentPoints = UserDefaults.standard.integer(forKey: "Scores") + lblFromUnwind.lableInt
+        //currentPoints = currentPoints + Int(lblFromUnwind.pointsLabel.text ?? "0")!
+        allPointsLabel.text = "ОЧКИ: \(currentPoints)"
+        
+        UserDefaults.standard.set(currentPoints, forKey: "Scores")
         
     }
     
-
 
 }
 

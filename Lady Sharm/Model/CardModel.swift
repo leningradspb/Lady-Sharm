@@ -34,7 +34,7 @@ class CardModel {
             // добавить в массив
             generatedCardsArray.append(cardTwo)
             }
-        return generatedCardsArray
+        return generatedCardsArray.shuffled()
     }
         
         

@@ -12,7 +12,9 @@ class AudioSettings {
     
     var isSoundOn = true {
         didSet {
-            NotificationCenter.default.post(Notification(name: Notification.Name.AudioSettingsDidChange))
+            print("sound is: \(isSoundOn)")
+            NotificationCenter.default.post(Notification(name: Notification.Name.AudioSettingsDidChange, object: self))
+            UserDefaults.standard.set(isSoundOn, forKey: "isSoundOn")
         }
     }
     var isMusicOn = true {
@@ -27,8 +29,10 @@ class AudioSettings {
         if UserDefaults.standard.value(forKey: "isMusicOn") != nil {
             isMusicOn = UserDefaults.standard.bool(forKey: "isMusicOn")
         }
+        if UserDefaults.standard.value(forKey: "isSoundOn") != nil {
+            isSoundOn = UserDefaults.standard.bool(forKey: "isSoundOn")
+        }
     }
-    
 }
 
 extension Notification.Name {
