@@ -8,9 +8,28 @@
 
 import UIKit
 import MessageUI
+import FBSDKLoginKit
 
 
 class SettingsViewController: UIViewController {
+    
+    
+//  var loginButtonSVC = FBButtonClass()
+    
+    
+    @IBOutlet weak var fbUserLabel: UILabel!
+    @IBOutlet weak var fbUserImageView: UIImageView!
+    @IBAction func fbLoginButtonAction(_ sender: Any) {
+        
+        fetchProfile()
+      
+        
+        
+       // loginButton.loginButtonDidLogOut(loginButton)
+        // Hiding the button
+    }
+    
+    @IBOutlet weak var fbLoginButtonOutlet: FBSDKLoginButton!
     
     @IBOutlet weak var lableSettings: UILabel!
     
@@ -47,12 +66,17 @@ class SettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fbLoginButtonOutlet.delegate = self
+        fetchProfile()
+        
        // lable настройки
         lableSettings.textColor = UIColor(red: 250/255, green: 253/255, blue: 2/255, alpha: 1)
         
        if let saveSwitch = UserDefaults.standard.value(forKey: "saveSwitch") {
             changeMusicOutlet.isOn = saveSwitch as! Bool
            // audioSettings?.isMusicOn = changeMusicOutlet.isOn
+        
         }
         
        /* if let soundSwitch = UserDefaults.standard.value(forKey: "soundSwitch") {
@@ -76,8 +100,43 @@ class SettingsViewController: UIViewController {
             //  UserDefaults.standard.bool(forKey: "saveValue")
         }
     }
-
-}
+    
+    func fetchProfile() {
+        
+        if(FBSDKAccessToken.current() != nil) {
+            
+            
+            
+            // print(FBSDKAccessToken.current().permissions)
+            let parametrs = ["fields" : "first_name, last_name, email, picture.type(large), id"]
+            FBSDKGraphRequest(graphPath: "me", parameters: parametrs)?.start(completionHandler: {  (connection, result, error) in
+                
+                
+                //  self.loginButton.isHidden = true
+                
+                let data = result as! [String : AnyObject]
+                
+                let name = data["first_name"] as? String
+                let secondName = data["last_name"] as? String
+                self.fbUserLabel.text = "\(name!) \(secondName!)"
+                
+                let FBid = data["id"] as? String
+                //  self.idLable.text = FBid
+                
+              //  let email = data["email"] as? String
+                // self.lable.text = email
+                
+                
+                let url = NSURL(string: "https://graph.facebook.com/\(FBid!)/picture?type=large&return_ssl_resources=1")
+                self.fbUserImageView.isHidden = false
+                self.fbUserLabel.isHidden = false
+                self.fbUserImageView.image = UIImage(data: NSData(contentsOf: url! as URL)! as Data)
+                self.fbUserImageView.layer.cornerRadius = self.fbUserImageView.frame.height / 2
+                
+            })
+        }
+    }
+} // end of the class
 
 
 
@@ -98,5 +157,32 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
         }
         self.dismiss(animated: true, completion: nil)
     }
+    
+}
+
+
+extension SettingsViewController: FBSDKLoginButtonDelegate {
+    
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        if FBSDKAccessToken.current() != nil {
+            // lable.text = "Залогинился"
+            fetchProfile()
+            
+            
+            //  lable.text = FBSDKAccessToken.current()?.
+            
+        } else {
+            
+            
+        }
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        
+        fbUserImageView.isHidden = true
+        fbUserLabel.isHidden = true
+        
+    }
+    
     
 }

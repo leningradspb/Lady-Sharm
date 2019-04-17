@@ -35,9 +35,12 @@
 		2679DCC8225B79280080BA26 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2679DCC3225B79280080BA26 /* Roboto-Medium.ttf */; };
 		2679DCCA225B7A900080BA26 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2679DCC9225B7A900080BA26 /* Roboto-Regular.ttf */; };
 		2688233E225A26BF00D29FA9 /* Scores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2688233D225A26BF00D29FA9 /* Scores.swift */; };
+		26FAEF282267090000A4A85E /* FBButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FAEF272267090000A4A85E /* FBButton.swift */; };
+		3EBA62ABFF4309B48D084160 /* Pods_Lady_Sharm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E720BAC0A4FBF67998243BA6 /* Pods_Lady_Sharm.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		192728356E98B8251E18D050 /* Pods-Lady Sharm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lady Sharm.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lady Sharm/Pods-Lady Sharm.release.xcconfig"; sourceTree = "<group>"; };
 		262C9EB722578BAC007CBBAA /* AudioSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSettings.swift; sourceTree = "<group>"; };
 		262C9EB92257A0AC007CBBAA /* CellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCollectionViewCell.swift; sourceTree = "<group>"; };
 		262C9EBD225812C6007CBBAA /* dingcorrect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dingcorrect.wav; sourceTree = "<group>"; };
@@ -68,6 +71,9 @@
 		2679DCC3225B79280080BA26 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		2679DCC9225B7A900080BA26 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		2688233D225A26BF00D29FA9 /* Scores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scores.swift; sourceTree = "<group>"; };
+		26FAEF272267090000A4A85E /* FBButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBButton.swift; sourceTree = "<group>"; };
+		E720BAC0A4FBF67998243BA6 /* Pods_Lady_Sharm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lady_Sharm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCBA2D9DE234FB3272946625 /* Pods-Lady Sharm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lady Sharm.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lady Sharm/Pods-Lady Sharm.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EBA62ABFF4309B48D084160 /* Pods_Lady_Sharm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +113,8 @@
 			children = (
 				2670354022577A63008952A5 /* Lady Sharm */,
 				2670353F22577A63008952A5 /* Products */,
+				80086FF7A28DD0E567A4AA1A /* Pods */,
+				50459C1D2CE7B75A72254D86 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -138,6 +147,7 @@
 		2670355922577B5C008952A5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				26FAEF272267090000A4A85E /* FBButton.swift */,
 				2670355722577AE5008952A5 /* Card.swift */,
 				2670355C22578090008952A5 /* CardModel.swift */,
 				2670356D22578808008952A5 /* AudioPlayer.swift */,
@@ -173,6 +183,23 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		50459C1D2CE7B75A72254D86 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E720BAC0A4FBF67998243BA6 /* Pods_Lady_Sharm.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		80086FF7A28DD0E567A4AA1A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FCBA2D9DE234FB3272946625 /* Pods-Lady Sharm.debug.xcconfig */,
+				192728356E98B8251E18D050 /* Pods-Lady Sharm.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -180,9 +207,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2670355322577A65008952A5 /* Build configuration list for PBXNativeTarget "Lady Sharm" */;
 			buildPhases = (
+				F249F6D686BB92A6C24835C0 /* [CP] Check Pods Manifest.lock */,
 				2670353A22577A63008952A5 /* Sources */,
 				2670353B22577A63008952A5 /* Frameworks */,
 				2670353C22577A63008952A5 /* Resources */,
+				F2B3908BAB9E044319D71807 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -250,6 +279,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		F249F6D686BB92A6C24835C0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Lady Sharm-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2B3908BAB9E044319D71807 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Lady Sharm/Pods-Lady Sharm-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Lady Sharm/Pods-Lady Sharm-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2670353A22577A63008952A5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -258,6 +338,7 @@
 				267035622257814E008952A5 /* GameLevelViewController.swift in Sources */,
 				2670354422577A63008952A5 /* ViewController.swift in Sources */,
 				2670354A22577A64008952A5 /* Lady_Sharm.xcdatamodeld in Sources */,
+				26FAEF282267090000A4A85E /* FBButton.swift in Sources */,
 				2670356022578135008952A5 /* SettingsViewController.swift in Sources */,
 				2670354222577A63008952A5 /* AppDelegate.swift in Sources */,
 				2670355822577AE5008952A5 /* Card.swift in Sources */,
@@ -412,6 +493,7 @@
 		};
 		2670355422577A65008952A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCBA2D9DE234FB3272946625 /* Pods-Lady Sharm.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -431,6 +513,7 @@
 		};
 		2670355522577A65008952A5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 192728356E98B8251E18D050 /* Pods-Lady Sharm.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
