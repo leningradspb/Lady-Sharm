@@ -80,6 +80,16 @@ class ViewController: UIViewController {
         
         //fbLoginButton.delegate = self
         
+        if(FBSDKAccessToken.current() != nil) {
+            let buttonTextLogin = NSAttributedString(string: "Выйти из ФБ")
+            fbLoginButton.setAttributedTitle(buttonTextLogin, for: .normal)
+            
+        } else {
+            fbLoginButton.isHidden = false
+            let buttonTextLogout = NSAttributedString(string: "Войти в ФБ")
+            fbLoginButton.setAttributedTitle(buttonTextLogout, for: .normal)
+        }
+        
         allPointsLabel.textColor = UIColor(red: 250/255, green: 253/255, blue: 2/255, alpha: 1)
         
         UserDefaults.standard.integer(forKey: "Scores")
@@ -122,6 +132,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didUnwindSegue(_ segue: UIStoryboardSegue) {
+        
+        fetchProfile()
+        
         guard let lblFromUnwind = segue.source as? EndGameViewController else { return }
         UserDefaults.standard.integer(forKey: "Scores")
         
@@ -183,9 +196,14 @@ extension ViewController: FBSDKLoginButtonDelegate {
             
             fbLoginButton.isHidden = true
             //  lable.text = FBSDKAccessToken.current()?.
+            
+            let buttonTextLogin = NSAttributedString(string: "Выйти из ФБ")
+            fbLoginButton.setAttributedTitle(buttonTextLogin, for: .normal)
         
         } else {
-           
+            fbLoginButton.isHidden = false
+            let buttonTextLogout = NSAttributedString(string: "Войти в ФБ")
+            fbLoginButton.setAttributedTitle(buttonTextLogout, for: .normal)
         
         }
         
@@ -193,7 +211,22 @@ extension ViewController: FBSDKLoginButtonDelegate {
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         
-        
+        if FBSDKAccessToken.current() != nil {
+            // lable.text = "Залогинился"
+            fetchProfile()
+            
+            fbLoginButton.isHidden = true
+            //  lable.text = FBSDKAccessToken.current()?.
+            
+            let buttonTextLogin = NSAttributedString(string: "Выйти из ФБ")
+            fbLoginButton.setAttributedTitle(buttonTextLogin, for: .normal)
+            
+        } else {
+            fbLoginButton.isHidden = false
+            let buttonTextLogout = NSAttributedString(string: "Войти в ФБ")
+            fbLoginButton.setAttributedTitle(buttonTextLogout, for: .normal)
+            
+        }
        
         
     }

@@ -23,8 +23,6 @@ class SettingsViewController: UIViewController {
         
         fetchProfile()
       
-        
-        
        // loginButton.loginButtonDidLogOut(loginButton)
         // Hiding the button
     }
@@ -69,6 +67,15 @@ class SettingsViewController: UIViewController {
         
         fbLoginButtonOutlet.delegate = self
         fetchProfile()
+        
+        if(FBSDKAccessToken.current() != nil) {
+            let buttonTextLogin = NSAttributedString(string: "Выйти из ФБ")
+            fbLoginButtonOutlet.setAttributedTitle(buttonTextLogin, for: .normal)
+            
+        } else {
+            let buttonTextLogout = NSAttributedString(string: "Войти в ФБ")
+            fbLoginButtonOutlet.setAttributedTitle(buttonTextLogout, for: .normal)
+        }
         
        // lable настройки
         lableSettings.textColor = UIColor(red: 250/255, green: 253/255, blue: 2/255, alpha: 1)
@@ -168,12 +175,17 @@ extension SettingsViewController: FBSDKLoginButtonDelegate {
             // lable.text = "Залогинился"
             fetchProfile()
             
+            if(FBSDKAccessToken.current() != nil) {
+                let buttonTextLogin = NSAttributedString(string: "Выйти из ФБ")
+                fbLoginButtonOutlet.setAttributedTitle(buttonTextLogin, for: .normal)
             
             //  lable.text = FBSDKAccessToken.current()?.
             
         } else {
+                let buttonTextLogout = NSAttributedString(string: "Войти в ФБ")
+                fbLoginButtonOutlet.setAttributedTitle(buttonTextLogout, for: .normal)
             
-            
+            }
         }
     }
     
@@ -182,7 +194,16 @@ extension SettingsViewController: FBSDKLoginButtonDelegate {
         fbUserImageView.isHidden = true
         fbUserLabel.isHidden = true
         
+        if(FBSDKAccessToken.current() != nil) {
+            let buttonTextLogin = NSAttributedString(string: "Выйти из ФБ")
+            fbLoginButtonOutlet.setAttributedTitle(buttonTextLogin, for: .normal)
+        
+        } else {
+            let buttonTextLogout = NSAttributedString(string: "Войти в ФБ")
+            fbLoginButtonOutlet.setAttributedTitle(buttonTextLogout, for: .normal)
+        }
+    
+    
     }
-    
-    
+
 }

@@ -35,7 +35,6 @@
 		2679DCC8225B79280080BA26 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2679DCC3225B79280080BA26 /* Roboto-Medium.ttf */; };
 		2679DCCA225B7A900080BA26 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2679DCC9225B7A900080BA26 /* Roboto-Regular.ttf */; };
 		2688233E225A26BF00D29FA9 /* Scores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2688233D225A26BF00D29FA9 /* Scores.swift */; };
-		26FAEF282267090000A4A85E /* FBButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FAEF272267090000A4A85E /* FBButton.swift */; };
 		3EBA62ABFF4309B48D084160 /* Pods_Lady_Sharm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E720BAC0A4FBF67998243BA6 /* Pods_Lady_Sharm.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,7 +70,6 @@
 		2679DCC3225B79280080BA26 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		2679DCC9225B7A900080BA26 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		2688233D225A26BF00D29FA9 /* Scores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scores.swift; sourceTree = "<group>"; };
-		26FAEF272267090000A4A85E /* FBButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBButton.swift; sourceTree = "<group>"; };
 		E720BAC0A4FBF67998243BA6 /* Pods_Lady_Sharm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lady_Sharm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCBA2D9DE234FB3272946625 /* Pods-Lady Sharm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lady Sharm.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lady Sharm/Pods-Lady Sharm.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -147,7 +145,6 @@
 		2670355922577B5C008952A5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				26FAEF272267090000A4A85E /* FBButton.swift */,
 				2670355722577AE5008952A5 /* Card.swift */,
 				2670355C22578090008952A5 /* CardModel.swift */,
 				2670356D22578808008952A5 /* AudioPlayer.swift */,
@@ -338,7 +335,6 @@
 				267035622257814E008952A5 /* GameLevelViewController.swift in Sources */,
 				2670354422577A63008952A5 /* ViewController.swift in Sources */,
 				2670354A22577A64008952A5 /* Lady_Sharm.xcdatamodeld in Sources */,
-				26FAEF282267090000A4A85E /* FBButton.swift in Sources */,
 				2670356022578135008952A5 /* SettingsViewController.swift in Sources */,
 				2670354222577A63008952A5 /* AppDelegate.swift in Sources */,
 				2670355822577AE5008952A5 /* Card.swift in Sources */,
