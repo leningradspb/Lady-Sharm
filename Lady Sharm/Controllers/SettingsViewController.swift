@@ -21,7 +21,9 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var fbUserImageView: UIImageView!
     @IBAction func fbLoginButtonAction(_ sender: Any) {
         
-        fetchProfile()
+        if(FBSDKAccessToken.current() == nil) {
+            fetchProfile()
+        }
       
        // loginButton.loginButtonDidLogOut(loginButton)
         // Hiding the button
@@ -68,6 +70,7 @@ class SettingsViewController: UIViewController {
         fbLoginButtonOutlet.delegate = self
         fetchProfile()
         
+        
         if(FBSDKAccessToken.current() != nil) {
             let buttonTextLogin = NSAttributedString(string: "Выйти из ФБ")
             fbLoginButtonOutlet.setAttributedTitle(buttonTextLogin, for: .normal)
@@ -110,16 +113,14 @@ class SettingsViewController: UIViewController {
     
     func fetchProfile() {
         
+        // удалить диспэтчи, если крашнется
+        
+        DispatchQueue.global(qos: .userInitiated).async {
         if(FBSDKAccessToken.current() != nil) {
-            
-            
             
             // print(FBSDKAccessToken.current().permissions)
             let parametrs = ["fields" : "first_name, last_name, email, picture.type(large), id"]
             FBSDKGraphRequest(graphPath: "me", parameters: parametrs)?.start(completionHandler: {  (connection, result, error) in
-                
-                
-                //  self.loginButton.isHidden = true
                 
                 let data = result as! [String : AnyObject]
                 
@@ -133,14 +134,17 @@ class SettingsViewController: UIViewController {
               //  let email = data["email"] as? String
                 // self.lable.text = email
                 
-                
                 let url = NSURL(string: "https://graph.facebook.com/\(FBid!)/picture?type=large&return_ssl_resources=1")
-                self.fbUserImageView.isHidden = false
-                self.fbUserLabel.isHidden = false
-                self.fbUserImageView.image = UIImage(data: NSData(contentsOf: url! as URL)! as Data)
-                self.fbUserImageView.layer.cornerRadius = self.fbUserImageView.frame.height / 2
-                
-            })
+                DispatchQueue.main.async { [weak self] in
+                self?.fbUserImageView.isHidden = false
+                self?.fbUserLabel.isHidden = false
+                self?.fbUserImageView.image = UIImage(data: NSData(contentsOf: url! as URL)! as Data)
+                self?.fbUserImageView.layer.cornerRadius = self!.fbUserImageView.frame.height / 2
+                    let buttonTextLogin = NSAttributedString(string: "Выйти из ФБ")
+                    self?.fbLoginButtonOutlet.setAttributedTitle(buttonTextLogin, for: .normal)
+                }
+                })
+        }
         }
     }
 } // end of the class
@@ -171,37 +175,51 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
 extension SettingsViewController: FBSDKLoginButtonDelegate {
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        
+        
         if FBSDKAccessToken.current() != nil {
             // lable.text = "Залогинился"
-            fetchProfile()
             
-            if(FBSDKAccessToken.current() != nil) {
-                let buttonTextLogin = NSAttributedString(string: "Выйти из ФБ")
-                fbLoginButtonOutlet.setAttributedTitle(buttonTextLogin, for: .normal)
+                fetchProfile()
+            
+
+             //   let buttonTextLogin = NSAttributedString(string: "Выйти из ФБ")
+              //  fbLoginButtonOutlet.setAttributedTitle(buttonTextLogin, for: .normal)
             
             //  lable.text = FBSDKAccessToken.current()?.
             
         } else {
-                let buttonTextLogout = NSAttributedString(string: "Войти в ФБ")
-                fbLoginButtonOutlet.setAttributedTitle(buttonTextLogout, for: .normal)
-            
+              //  let buttonTextLogout = NSAttributedString(string: "Войти в ФБ")
+              //  fbLoginButtonOutlet.setAttributedTitle(buttonTextLogout, for: .normal)
+            fetchProfile()
             }
-        }
     }
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         
+        
         fbUserImageView.isHidden = true
         fbUserLabel.isHidden = true
         
-        if(FBSDKAccessToken.current() != nil) {
+        if FBSDKAccessToken.current() != nil {
+        
+        fetchProfile()
+        } else {
+            fetchProfile()
+            let buttonTextLogout = NSAttributedString(string: "Войти в ФБ")
+            fbLoginButtonOutlet.setAttributedTitle(buttonTextLogout, for: .normal)
+        } 
+        
+        
+        
+      /*  if(FBSDKAccessToken.current() != nil) {
             let buttonTextLogin = NSAttributedString(string: "Выйти из ФБ")
             fbLoginButtonOutlet.setAttributedTitle(buttonTextLogin, for: .normal)
         
         } else {
             let buttonTextLogout = NSAttributedString(string: "Войти в ФБ")
             fbLoginButtonOutlet.setAttributedTitle(buttonTextLogout, for: .normal)
-        }
+        } */
     
     
     }

@@ -31,13 +31,6 @@ class ViewController: UIViewController {
         
         
         fetchProfile()
-        // Hiding the button
-        
-        
-     //   self.view.addSubview(loginButton)
-        // Simulating a tap for the actual Facebook SDK button
-       // loginButton.sendActions(for: UIControl.Event.touchUpInside)
-        
     
         
     }
@@ -73,7 +66,23 @@ class ViewController: UIViewController {
     @IBOutlet weak var newGame: UIButton!
     
     
-    
+    // скрыть кнопку по нажатию
+    override func viewWillAppear(_ animated: Bool) {
+        if FBSDKAccessToken.current() != nil {
+            // lable.text = "Залогинился"
+            fetchProfile()
+            
+            fbLoginButton.isHidden = true
+            //  lable.text = FBSDKAccessToken.current()?.
+            
+            
+        } else {
+            fbLoginButton.isHidden = false
+            let buttonTextLogout = NSAttributedString(string: "Войти в ФБ")
+            fbLoginButton.setAttributedTitle(buttonTextLogout, for: .normal)
+            
+        }
+    } // viewWillAppear
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -133,7 +142,19 @@ class ViewController: UIViewController {
     
     @IBAction func didUnwindSegue(_ segue: UIStoryboardSegue) {
         
-        fetchProfile()
+        if FBSDKAccessToken.current() != nil {
+            // lable.text = "Залогинился"
+            fetchProfile()
+            
+            fbLoginButton.isHidden = true
+            //  lable.text = FBSDKAccessToken.current()?.
+            
+        } else {
+            fbLoginButton.isHidden = false
+            let buttonTextLogout = NSAttributedString(string: "Войти в ФБ")
+            fbLoginButton.setAttributedTitle(buttonTextLogout, for: .normal)
+            
+        }
         
         guard let lblFromUnwind = segue.source as? EndGameViewController else { return }
         UserDefaults.standard.integer(forKey: "Scores")
@@ -154,30 +175,30 @@ class ViewController: UIViewController {
             
             
             // print(FBSDKAccessToken.current().permissions)
-            let parametrs = ["fields" : "first_name, last_name, email, picture.type(large), id"]
-            FBSDKGraphRequest(graphPath: "me", parameters: parametrs)?.start(completionHandler: {  (connection, result, error) in
+          //  let parametrs = ["fields" : "first_name, last_name, email, picture.type(large), id"]
+          //  FBSDKGraphRequest(graphPath: "me", parameters: parametrs)?.start(completionHandler: {  (connection, result, error) in
                 
                 
               //  self.loginButton.isHidden = true
                 
-                let data = result as! [String : AnyObject]
+             //   let data = result as! [String : AnyObject]
                 
-                let name = data["first_name"] as? String
-                let secondName = data["last_name"] as? String
-                self.nameLabel.text = "\(name!) \(secondName!)"
+               // let name = data["first_name"] as? String
+              //  let secondName = data["last_name"] as? String
+              //  self.nameLabel.text = "\(name!) \(secondName!)"
                 
-                let FBid = data["id"] as? String
-              //  self.idLable.text = FBid
+               // let FBid = data["id"] as? String
+              // self.idLable.text = FBid
                 
-                let email = data["email"] as? String
+         //       let email = data["email"] as? String
                // self.lable.text = email
                 
                 
-                let url = NSURL(string: "https://graph.facebook.com/\(FBid!)/picture?type=large&return_ssl_resources=1")
-               self.imageView.image = UIImage(data: NSData(contentsOf: url! as URL)! as Data)
+             //   let url = NSURL(string: "https://graph.facebook.com/\(FBid!)/picture?type=large&return_ssl_resources=1")
+             //  self.imageView.image = UIImage(data: NSData(contentsOf: url! as URL)! as Data)
                 
                 self.fbLoginButton.isHidden = true
-            })
+          //  })
         }
 
     }
@@ -186,47 +207,13 @@ class ViewController: UIViewController {
 extension ViewController: FBSDKLoginButtonDelegate {
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         
-       // loginButtonn = loginButton
-        
-      //  loginButtonn.setImage(UIImage(named: "btnLoginWithFb"), for: .selected)
-        
-        if FBSDKAccessToken.current() != nil {
-            // lable.text = "Залогинился"
-            fetchProfile()
-            
-            fbLoginButton.isHidden = true
-            //  lable.text = FBSDKAccessToken.current()?.
-            
-            let buttonTextLogin = NSAttributedString(string: "Выйти из ФБ")
-            fbLoginButton.setAttributedTitle(buttonTextLogin, for: .normal)
-        
-        } else {
-            fbLoginButton.isHidden = false
-            let buttonTextLogout = NSAttributedString(string: "Войти в ФБ")
-            fbLoginButton.setAttributedTitle(buttonTextLogout, for: .normal)
-        
-        }
+    
         
     }
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         
-        if FBSDKAccessToken.current() != nil {
-            // lable.text = "Залогинился"
-            fetchProfile()
-            
-            fbLoginButton.isHidden = true
-            //  lable.text = FBSDKAccessToken.current()?.
-            
-            let buttonTextLogin = NSAttributedString(string: "Выйти из ФБ")
-            fbLoginButton.setAttributedTitle(buttonTextLogin, for: .normal)
-            
-        } else {
-            fbLoginButton.isHidden = false
-            let buttonTextLogout = NSAttributedString(string: "Войти в ФБ")
-            fbLoginButton.setAttributedTitle(buttonTextLogout, for: .normal)
-            
-        }
+      
        
         
     }
