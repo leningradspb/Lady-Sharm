@@ -10,11 +10,20 @@ import UIKit
 
 class SecondTutorialViewController: BasedTutorialViewController {
 
-   var index = Int()
+ 
+    @IBOutlet weak var labelYellow: UILabel!
+    @IBAction func nextBA(_ sender: UIButton) {
+        performSegue(withIdentifier: "SecondToThird", sender: self)
+    }
+    @IBOutlet weak var nextBO: UIButton!
+    @IBAction func skip(_ sender: UIButton) {
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        labelYellow.textColor = UIColor(red: 254/255, green: 237/255, blue: 0/255, alpha: 1)
+        nextBO.setTitleColor(UIColor(red: 254/255, green: 237/255, blue: 0/255, alpha: 1), for: .normal)
         
         let right = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(swipe:)))
         right.direction = UISwipeGestureRecognizer.Direction.right

@@ -12,6 +12,7 @@ import FBSDKLoginKit
 
 class ViewController: UIViewController {
     
+    var tutorialStatus = 0
     
     @IBAction func exitAction(_ sender: UIButton) {
         //fbLoginButton.isHidden = false
@@ -89,6 +90,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // проверка туториала
+    tutorialStatus = UserDefaults.standard.integer(forKey: "tut")
         
         if(FBSDKAccessToken.current() != nil) {
             let buttonTextLogin = NSAttributedString(string: "Выйти из ФБ")
@@ -143,8 +146,12 @@ class ViewController: UIViewController {
     
     // MARK: Переход к туториалу
     override func viewDidAppear(_ animated: Bool) {
-        if allPointsLabel.text == "ОЧКИ: 0" {
+       // if allPointsLabel.text == "ОЧКИ: 0" {
+        if tutorialStatus == 0 {
         performSegue(withIdentifier: "vcToTutorial", sender: self)
+            tutorialStatus = 1
+            // если прошел, то установить
+            UserDefaults.standard.set(tutorialStatus, forKey: "tut")
         }
     }
     
