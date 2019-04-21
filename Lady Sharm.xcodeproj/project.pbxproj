@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2602C322226C59B400675467 /* FirstTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2602C321226C59B400675467 /* FirstTutorialViewController.swift */; };
+		2602C324226C5A3300675467 /* SecondTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2602C323226C5A3300675467 /* SecondTutorialViewController.swift */; };
+		2614F188226C650E00A0EC36 /* BasedTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2614F187226C650E00A0EC36 /* BasedTutorialViewController.swift */; };
+		2614F18A226C6B1500A0EC36 /* ThirdTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2614F189226C6B1500A0EC36 /* ThirdTutorialViewController.swift */; };
 		262C9EB822578BAC007CBBAA /* AudioSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262C9EB722578BAC007CBBAA /* AudioSettings.swift */; };
 		262C9EBA2257A0AC007CBBAA /* CellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262C9EB92257A0AC007CBBAA /* CellCollectionViewCell.swift */; };
 		262C9EC1225812C6007CBBAA /* dingcorrect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 262C9EBD225812C6007CBBAA /* dingcorrect.wav */; };
@@ -40,6 +44,10 @@
 
 /* Begin PBXFileReference section */
 		192728356E98B8251E18D050 /* Pods-Lady Sharm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lady Sharm.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lady Sharm/Pods-Lady Sharm.release.xcconfig"; sourceTree = "<group>"; };
+		2602C321226C59B400675467 /* FirstTutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTutorialViewController.swift; sourceTree = "<group>"; };
+		2602C323226C5A3300675467 /* SecondTutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTutorialViewController.swift; sourceTree = "<group>"; };
+		2614F187226C650E00A0EC36 /* BasedTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasedTutorialViewController.swift; sourceTree = "<group>"; };
+		2614F189226C6B1500A0EC36 /* ThirdTutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTutorialViewController.swift; sourceTree = "<group>"; };
 		262C9EB722578BAC007CBBAA /* AudioSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSettings.swift; sourceTree = "<group>"; };
 		262C9EB92257A0AC007CBBAA /* CellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCollectionViewCell.swift; sourceTree = "<group>"; };
 		262C9EBD225812C6007CBBAA /* dingcorrect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dingcorrect.wav; sourceTree = "<group>"; };
@@ -145,6 +153,7 @@
 		2670355922577B5C008952A5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2614F187226C650E00A0EC36 /* BasedTutorialViewController.swift */,
 				2670355722577AE5008952A5 /* Card.swift */,
 				2670355C22578090008952A5 /* CardModel.swift */,
 				2670356D22578808008952A5 /* AudioPlayer.swift */,
@@ -163,6 +172,9 @@
 				2670356322578178008952A5 /* GameSceneViewController.swift */,
 				267035652257818D008952A5 /* EndGameViewController.swift */,
 				26703567225781A5008952A5 /* PrivacyViewController.swift */,
+				2602C321226C59B400675467 /* FirstTutorialViewController.swift */,
+				2602C323226C5A3300675467 /* SecondTutorialViewController.swift */,
+				2614F189226C6B1500A0EC36 /* ThirdTutorialViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -337,9 +349,13 @@
 				2670354A22577A64008952A5 /* Lady_Sharm.xcdatamodeld in Sources */,
 				2670356022578135008952A5 /* SettingsViewController.swift in Sources */,
 				2670354222577A63008952A5 /* AppDelegate.swift in Sources */,
+				2602C322226C59B400675467 /* FirstTutorialViewController.swift in Sources */,
 				2670355822577AE5008952A5 /* Card.swift in Sources */,
+				2614F188226C650E00A0EC36 /* BasedTutorialViewController.swift in Sources */,
 				262C9EB822578BAC007CBBAA /* AudioSettings.swift in Sources */,
+				2614F18A226C6B1500A0EC36 /* ThirdTutorialViewController.swift in Sources */,
 				2670355D22578090008952A5 /* CardModel.swift in Sources */,
+				2602C324226C5A3300675467 /* SecondTutorialViewController.swift in Sources */,
 				262C9EBA2257A0AC007CBBAA /* CellCollectionViewCell.swift in Sources */,
 				26703568225781A5008952A5 /* PrivacyViewController.swift in Sources */,
 				2688233E225A26BF00D29FA9 /* Scores.swift in Sources */,

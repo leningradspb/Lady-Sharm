@@ -68,6 +68,8 @@ class ViewController: UIViewController {
     
     // скрыть кнопку по нажатию
     override func viewWillAppear(_ animated: Bool) {
+        
+
         if FBSDKAccessToken.current() != nil {
             // lable.text = "Залогинился"
             fetchProfile()
@@ -87,7 +89,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //fbLoginButton.delegate = self
         
         if(FBSDKAccessToken.current() != nil) {
             let buttonTextLogin = NSAttributedString(string: "Выйти из ФБ")
@@ -137,6 +138,13 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "vcToSettings", let dvc = segue.destination as? SettingsViewController {
             dvc.audioSettings = audioSettings
+        }
+    }
+    
+    // MARK: Переход к туториалу
+    override func viewDidAppear(_ animated: Bool) {
+        if allPointsLabel.text == "ОЧКИ: 0" {
+        performSegue(withIdentifier: "vcToTutorial", sender: self)
         }
     }
     

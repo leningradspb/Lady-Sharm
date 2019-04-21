@@ -61,6 +61,155 @@
             </objects>
             <point key="canvasLocation" x="35.532233883058474" y="-290.39999999999998"/>
         </scene>
+        <!--First Tutorial View Controller-->
+        <scene sceneID="TyC-65-5Iz">
+            <objects>
+                <viewController storyboardIdentifier="FirstTutorialViewControllerID" id="0lW-St-GGZ" customClass="FirstTutorialViewController" customModule="Lady_Sharm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qY1-bd-6Gu">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Проверь свою внимательность" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3c-pb-JfO">
+                                <rect key="frame" x="185" y="16" width="297" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="297" id="flO-MV-b1o"/>
+                                    <constraint firstAttribute="height" constant="24" id="qqj-B5-tz3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="20"/>
+                                <color key="textColor" red="1" green="0.98862167769999998" blue="0.48373395940000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pm9-yE-eDq">
+                                <rect key="frame" x="163.5" y="56" width="340" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="340" id="2Vh-L3-i1R"/>
+                                    <constraint firstAttribute="height" constant="39" id="nZM-xJ-wEF"/>
+                                </constraints>
+                                <string key="text">В игре присутствует 3 уровня сложности.
+Начни с нормального и дойди до экстримального!</string>
+                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icnLevels" translatesAutoresizingMaskIntoConstraints="NO" id="J9l-XN-FwK">
+                                <rect key="frame" x="220.5" y="127" width="226" height="122"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="226" id="UeY-B9-z6J"/>
+                                    <constraint firstAttribute="height" constant="122" id="mHT-2X-NPT"/>
+                                </constraints>
+                            </imageView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="nDb-9u-00G">
+                                <rect key="frame" x="314" y="318" width="39" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="39" id="20Y-CQ-doS"/>
+                                    <constraint firstAttribute="height" constant="37" id="Mpf-td-63Z"/>
+                                </constraints>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hb3-5h-Q6i">
+                                <rect key="frame" x="606" y="324" width="45" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="05y-hQ-DSC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
+                                <state key="normal" title="ДАЛЕЕ">
+                                    <color key="titleColor" red="1" green="0.98862167769999998" blue="0.48373395940000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButtonAction:" destination="0lW-St-GGZ" eventType="touchUpInside" id="TTD-EF-ica"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tw2-MK-pqB">
+                                <rect key="frame" x="20" y="325" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8fg-lD-AAx" firstAttribute="bottom" secondItem="nDb-9u-00G" secondAttribute="bottom" constant="20" id="88a-7Q-WeS"/>
+                            <constraint firstItem="h3c-pb-JfO" firstAttribute="top" secondItem="8fg-lD-AAx" secondAttribute="top" constant="16" id="A7L-Fm-ZDW"/>
+                            <constraint firstItem="Pm9-yE-eDq" firstAttribute="top" secondItem="h3c-pb-JfO" secondAttribute="bottom" constant="16" id="KDY-LQ-uLe"/>
+                            <constraint firstItem="nDb-9u-00G" firstAttribute="centerX" secondItem="qY1-bd-6Gu" secondAttribute="centerX" id="krz-h0-0gC"/>
+                            <constraint firstItem="8fg-lD-AAx" firstAttribute="trailing" secondItem="Hb3-5h-Q6i" secondAttribute="trailing" constant="16" id="ldt-cd-dRG"/>
+                            <constraint firstItem="J9l-XN-FwK" firstAttribute="top" secondItem="Pm9-yE-eDq" secondAttribute="bottom" constant="32" id="mP5-vV-ehb"/>
+                            <constraint firstItem="8fg-lD-AAx" firstAttribute="bottom" secondItem="Hb3-5h-Q6i" secondAttribute="bottom" constant="22" id="nc3-7w-CQa"/>
+                            <constraint firstItem="J9l-XN-FwK" firstAttribute="centerX" secondItem="qY1-bd-6Gu" secondAttribute="centerX" id="umX-Pe-hD2"/>
+                            <constraint firstItem="Pm9-yE-eDq" firstAttribute="centerX" secondItem="qY1-bd-6Gu" secondAttribute="centerX" id="wI5-r4-N2L"/>
+                            <constraint firstItem="h3c-pb-JfO" firstAttribute="centerX" secondItem="qY1-bd-6Gu" secondAttribute="centerX" id="xhC-m4-VGL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8fg-lD-AAx"/>
+                    </view>
+                    <connections>
+                        <segue destination="nE1-JS-aEj" kind="presentation" identifier="FirstToSecond" modalTransitionStyle="crossDissolve" id="Imt-fh-3Zt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O7O-tF-eWb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1105" y="1169"/>
+        </scene>
+        <!--Second Tutorial View Controller-->
+        <scene sceneID="IDU-qL-1LV">
+            <objects>
+                <viewController storyboardIdentifier="SecondTutorialViewControllerID" id="nE1-JS-aEj" customClass="SecondTutorialViewController" customModule="Lady_Sharm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fGR-dF-I1e">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZIy-E4-JMO">
+                                <rect key="frame" x="314" y="318" width="39" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="39" id="I1O-RC-Yh5"/>
+                                    <constraint firstAttribute="height" constant="37" id="lit-TS-dNb"/>
+                                </constraints>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ZIy-E4-JMO" firstAttribute="centerX" secondItem="fGR-dF-I1e" secondAttribute="centerX" id="4OB-Lq-D2F"/>
+                            <constraint firstItem="xho-ys-qGi" firstAttribute="bottom" secondItem="ZIy-E4-JMO" secondAttribute="bottom" constant="20" id="CYA-QX-95S"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xho-ys-qGi"/>
+                    </view>
+                    <connections>
+                        <segue destination="0lW-St-GGZ" kind="presentation" identifier="SecondToFirst" modalTransitionStyle="crossDissolve" id="66D-eN-gJO"/>
+                        <segue destination="jdu-VQ-JDc" kind="presentation" identifier="SecondToThird" modalTransitionStyle="crossDissolve" id="2h0-k5-0wN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="337-lC-dtr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1105" y="2225"/>
+        </scene>
+        <!--Third Tutorial View Controller-->
+        <scene sceneID="Fuz-ZN-8Id">
+            <objects>
+                <viewController storyboardIdentifier="ThirdTutorialViewControllerID" id="jdu-VQ-JDc" customClass="ThirdTutorialViewController" customModule="Lady_Sharm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kb4-9G-xS6">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="2" translatesAutoresizingMaskIntoConstraints="NO" id="9Jc-Nw-zx3">
+                                <rect key="frame" x="314" y="318" width="39" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="ZSC-BL-5em"/>
+                                    <constraint firstAttribute="width" constant="39" id="mlx-Wu-26q"/>
+                                </constraints>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9Jc-Nw-zx3" firstAttribute="centerX" secondItem="Kb4-9G-xS6" secondAttribute="centerX" id="FGc-JM-a2u"/>
+                            <constraint firstItem="tSo-Ty-P5P" firstAttribute="bottom" secondItem="9Jc-Nw-zx3" secondAttribute="bottom" constant="20" id="OlZ-YT-wo6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tSo-Ty-P5P"/>
+                    </view>
+                    <connections>
+                        <segue destination="nE1-JS-aEj" kind="presentation" identifier="ThirdToSecond" modalTransitionStyle="crossDissolve" id="H9z-eV-eIs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CDq-XL-Ism" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1105" y="3358"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="Ocq-3b-va1">
             <objects>
@@ -190,6 +339,7 @@
                         <outlet property="fbLoginButton" destination="Rnq-1x-yex" id="PdR-9Y-Blu"/>
                         <outlet property="imageView" destination="gjJ-du-1My" id="wqV-ez-3XW"/>
                         <outlet property="nameLabel" destination="ych-gq-5qy" id="XTR-Kh-Mjv"/>
+                        <segue destination="0lW-St-GGZ" kind="show" identifier="vcToTutorial" id="iJV-sg-ikE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bQV-La-2Tn" sceneMemberID="firstResponder"/>
@@ -794,10 +944,13 @@
         <image name="btnPlay" width="328" height="56"/>
         <image name="btnPp" width="360" height="56"/>
         <image name="icnBack" width="24" height="24"/>
+        <image name="icnLevels" width="226" height="122"/>
         <image name="icnSettings" width="24" height="24"/>
         <image name="rectangle436" width="82" height="82"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sV5-y2-JAx"/>
+        <segue reference="Imt-fh-3Zt"/>
+        <segue reference="iJV-sg-ikE"/>
+        <segue reference="ZVp-9h-5Re"/>
     </inferredMetricsTieBreakers>
 </document>
