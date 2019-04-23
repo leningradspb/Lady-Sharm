@@ -90,7 +90,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // проверка туториала
+        // MARK: проверка туториала
     tutorialStatus = UserDefaults.standard.integer(forKey: "tut")
         
         if(FBSDKAccessToken.current() != nil) {

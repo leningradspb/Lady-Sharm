@@ -40,6 +40,7 @@
 		2679DCC8225B79280080BA26 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2679DCC3225B79280080BA26 /* Roboto-Medium.ttf */; };
 		2679DCCA225B7A900080BA26 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2679DCC9225B7A900080BA26 /* Roboto-Regular.ttf */; };
 		2688233E225A26BF00D29FA9 /* Scores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2688233D225A26BF00D29FA9 /* Scores.swift */; };
+		26CC9FB0226DA8E900CAD4C5 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26CC9FAF226DA8E900CAD4C5 /* Tutorial.storyboard */; };
 		3EBA62ABFF4309B48D084160 /* Pods_Lady_Sharm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E720BAC0A4FBF67998243BA6 /* Pods_Lady_Sharm.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +81,7 @@
 		2679DCC3225B79280080BA26 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		2679DCC9225B7A900080BA26 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		2688233D225A26BF00D29FA9 /* Scores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scores.swift; sourceTree = "<group>"; };
+		26CC9FAF226DA8E900CAD4C5 /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		E720BAC0A4FBF67998243BA6 /* Pods_Lady_Sharm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lady_Sharm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCBA2D9DE234FB3272946625 /* Pods-Lady Sharm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lady Sharm.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lady Sharm/Pods-Lady Sharm.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,6 +154,7 @@
 				262C9EBC2258129F007CBBAA /* Sounds */,
 				2679DCBE225B78C90080BA26 /* Fonts */,
 				2670354122577A63008952A5 /* AppDelegate.swift */,
+				26CC9FAF226DA8E900CAD4C5 /* Tutorial.storyboard */,
 				2670354522577A63008952A5 /* Main.storyboard */,
 				2670354B22577A65008952A5 /* Assets.xcassets */,
 				2670354D22577A65008952A5 /* LaunchScreen.storyboard */,
@@ -290,6 +293,7 @@
 				262C9EC4225812C6007CBBAA /* shuffle.wav in Resources */,
 				2679DCCA225B7A900080BA26 /* Roboto-Regular.ttf in Resources */,
 				2670354C22577A65008952A5 /* Assets.xcassets in Resources */,
+				26CC9FB0226DA8E900CAD4C5 /* Tutorial.storyboard in Resources */,
 				2670354722577A63008952A5 /* Main.storyboard in Resources */,
 				262C9EC2225812C6007CBBAA /* cardflip.wav in Resources */,
 				2679DCC6225B79280080BA26 /* Roboto-Italic.ttf in Resources */,
