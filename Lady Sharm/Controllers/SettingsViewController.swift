@@ -113,20 +113,29 @@ class SettingsViewController: UIViewController {
     
     func fetchProfile() {
         
-        // удалить диспэтчи, если крашнется
         
-        DispatchQueue.global(qos: .userInitiated).async {
+        
+        // MARK
+        Thread.printCurrent()
+        
         if(FBSDKAccessToken.current() != nil) {
             
             // print(FBSDKAccessToken.current().permissions)
             let parametrs = ["fields" : "first_name, last_name, email, picture.type(large), id"]
             FBSDKGraphRequest(graphPath: "me", parameters: parametrs)?.start(completionHandler: {  (connection, result, error) in
+                // MARK
+                 Thread.printCurrent()
+                
+                DispatchQueue.global(qos: .userInitiated).async {
+                    
+                    // MARK
+                     Thread.printCurrent()
                 
                 let data = result as! [String : AnyObject]
                 
                 let name = data["first_name"] as? String
                 let secondName = data["last_name"] as? String
-                self.fbUserLabel.text = "\(name!) \(secondName!)"
+                
                 
                 let FBid = data["id"] as? String
                 //  self.idLable.text = FBid
@@ -134,17 +143,20 @@ class SettingsViewController: UIViewController {
               //  let email = data["email"] as? String
                 // self.lable.text = email
                 
-                let url = NSURL(string: "https://graph.facebook.com/\(FBid!)/picture?type=large&return_ssl_resources=1")
-                DispatchQueue.main.async { [weak self] in
-                self?.fbUserImageView.isHidden = false
-                self?.fbUserLabel.isHidden = false
-                self?.fbUserImageView.image = UIImage(data: NSData(contentsOf: url! as URL)! as Data)
-                self?.fbUserImageView.layer.cornerRadius = self!.fbUserImageView.frame.height / 2
-                    let buttonTextLogin = NSAttributedString(string: "Выйти из ФБ")
-                    self?.fbLoginButtonOutlet.setAttributedTitle(buttonTextLogin, for: .normal)
+                if let url = NSURL(string: "https://graph.facebook.com/\(FBid!)/picture?type=large&return_ssl_resources=1"), let imageData = try? Data(contentsOf: url as URL) {
+                    DispatchQueue.main.async { [weak self] in
+                        self?.fbUserImageView.isHidden = false
+                        self?.fbUserLabel.isHidden = false
+                        self?.fbUserImageView.image = UIImage(data: imageData)
+                        self?.fbUserLabel.text = "\(name!) \(secondName!)"
+                        self?.fbUserImageView.layer.cornerRadius = self!.fbUserImageView.frame.height / 2
+                        let buttonTextLogin = NSAttributedString(string: "Выйти из ФБ")
+                        self?.fbLoginButtonOutlet.setAttributedTitle(buttonTextLogin, for: .normal)
+                    }
+                
                 }
-                })
-        }
+                }
+        })
         }
     }
 } // end of the class
@@ -224,4 +236,11 @@ extension SettingsViewController: FBSDKLoginButtonDelegate {
     
     }
 
+}
+
+
+extension Thread {
+    class func printCurrent() {
+        print("\r⚡️: \(Thread.current)\r" + "🏭: \(OperationQueue.current?.underlyingQueue?.label ?? "None")\r")
+    }
 }

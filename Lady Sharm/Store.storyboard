@@ -101,10 +101,10 @@
                                                         <constraint firstAttribute="width" constant="88" id="tLH-co-8iv"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAR-RX-nSf">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAR-RX-nSf">
                                                     <rect key="frame" x="100" y="10" width="120" height="19"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="19" id="VTh-JI-QtO"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="19" id="VTh-JI-QtO"/>
                                                         <constraint firstAttribute="width" constant="120" id="buO-pd-exJ"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
@@ -112,7 +112,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Цена:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1gn-sQ-R8M">
-                                                    <rect key="frame" x="100" y="41" width="37" height="17"/>
+                                                    <rect key="frame" x="100" y="29" width="37" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="17" id="1mY-Oq-gnX"/>
                                                         <constraint firstAttribute="width" constant="37" id="XLH-li-QTh"/>
@@ -122,16 +122,16 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qmf-r1-6Ps">
-                                                    <rect key="frame" x="144" y="42" width="8" height="17"/>
+                                                    <rect key="frame" x="144" y="29" width="8" height="17"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="auK-xn-q7m">
-                                                    <rect key="frame" x="99" y="58" width="144" height="36"/>
+                                                    <rect key="frame" x="99" y="64" width="140" height="30"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="144" id="QwV-Vp-udP"/>
-                                                        <constraint firstAttribute="height" constant="36" id="kJr-dd-39q"/>
+                                                        <constraint firstAttribute="width" constant="140" id="QwV-Vp-udP"/>
+                                                        <constraint firstAttribute="height" constant="30" id="kJr-dd-39q"/>
                                                     </constraints>
                                                     <connections>
                                                         <action selector="buttonCellAction:" destination="toE-MR-O7V" eventType="touchUpInside" id="dYt-1M-AFa"/>
@@ -141,14 +141,13 @@
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="1gn-sQ-R8M" firstAttribute="top" secondItem="IAR-RX-nSf" secondAttribute="bottom" constant="12" id="9sf-5X-ZWd"/>
+                                            <constraint firstItem="1gn-sQ-R8M" firstAttribute="top" secondItem="IAR-RX-nSf" secondAttribute="bottom" id="9sf-5X-ZWd"/>
                                             <constraint firstItem="IAR-RX-nSf" firstAttribute="top" secondItem="toE-MR-O7V" secondAttribute="topMargin" constant="2" id="QRY-ob-o2z"/>
                                             <constraint firstItem="auK-xn-q7m" firstAttribute="leading" secondItem="ure-f7-kJF" secondAttribute="trailing" constant="5" id="SPO-xs-C1B"/>
-                                            <constraint firstItem="Qmf-r1-6Ps" firstAttribute="leading" secondItem="1gn-sQ-R8M" secondAttribute="trailing" constant="7" id="Urz-tY-1eE"/>
                                             <constraint firstItem="1gn-sQ-R8M" firstAttribute="leading" secondItem="ure-f7-kJF" secondAttribute="trailing" constant="6" id="YOc-yf-Blg"/>
-                                            <constraint firstItem="Qmf-r1-6Ps" firstAttribute="top" secondItem="IAR-RX-nSf" secondAttribute="bottom" constant="13" id="YtE-af-8xD"/>
+                                            <constraint firstItem="Qmf-r1-6Ps" firstAttribute="top" secondItem="IAR-RX-nSf" secondAttribute="bottom" id="YtE-af-8xD"/>
                                             <constraint firstItem="IAR-RX-nSf" firstAttribute="leading" secondItem="ure-f7-kJF" secondAttribute="trailing" constant="6" id="ftM-nD-GJK"/>
-                                            <constraint firstItem="auK-xn-q7m" firstAttribute="top" secondItem="1gn-sQ-R8M" secondAttribute="bottom" id="oRi-kq-bmi"/>
+                                            <constraint firstItem="Qmf-r1-6Ps" firstAttribute="leading" secondItem="1gn-sQ-R8M" secondAttribute="trailing" constant="7" id="heW-H7-Plz"/>
                                             <constraint firstAttribute="bottom" secondItem="auK-xn-q7m" secondAttribute="bottom" constant="7" id="r7b-8o-o0K"/>
                                             <constraint firstItem="ure-f7-kJF" firstAttribute="top" secondItem="toE-MR-O7V" secondAttribute="top" constant="6" id="rvw-dd-i5R"/>
                                             <constraint firstAttribute="bottom" secondItem="ure-f7-kJF" secondAttribute="bottom" constant="7" id="tqP-sF-C0F"/>

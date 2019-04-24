@@ -11,6 +11,11 @@ import UIKit
 class StoreViewController: BasedTutorialViewController {
     
     var text = String()
+    
+    let arrayOfImages = [UIImage(named: "skin1"), UIImage(named: "skin2"), UIImage(named: "skin3")]
+    let arrayOfLabels = ["Стандарт", "Дивный лес", "Летающий остров"]
+   // let arrayOfButtons = [UIImage(named: "btnBuy"), UIImage(named: "btnInstalled"), UIImage(named: "btnInstall")]
+    let arrayOfButtons = ["btnInstalled", "btnBuy", "btnBuy"]
 
     @IBOutlet weak var collectionViewOutlet: UICollectionView!
     @IBOutlet weak var pointsLabelStore: UILabel!
@@ -49,8 +54,13 @@ extension StoreViewController: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! StoreCollectionViewCell
         
+       // cell.imageViewCell.image = UIImage(named: "bg2Sm")
+      //  cell.index(ofAccessibilityElement: self)
+        cell.imageViewCell.image = arrayOfImages[indexPath.row]
+        cell.descriptionLabel.text = arrayOfLabels[indexPath.row]
+        cell.buttonCellOutlet.setBackgroundImage(UIImage(named: arrayOfButtons[indexPath.row]), for: .normal)
+        
         return cell
     }
-    
     
 }

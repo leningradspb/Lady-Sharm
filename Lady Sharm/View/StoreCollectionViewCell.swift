@@ -11,9 +11,27 @@ import UIKit
 class StoreCollectionViewCell: UICollectionViewCell {
     
     @IBAction func buttonCellAction(_ sender: UIButton) {
+        
+        sender.setBackgroundImage(UIImage(named: "btnInstalled"), for: .normal)
+        
+        
+        
+        
     }
     @IBOutlet weak var buttonCellOutlet: UIButton!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var imageViewCell: UIImageView!
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
