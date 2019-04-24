@@ -61,13 +61,20 @@
             </objects>
             <point key="canvasLocation" x="35.532233883058474" y="-290.39999999999998"/>
         </scene>
-        <!--Store-->
-        <scene sceneID="iAL-j9-8bl">
+        <!--View Controller-->
+        <scene sceneID="DPo-01-W6q">
             <objects>
-                <viewControllerPlaceholder storyboardName="Store" id="d26-jc-Ekn" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="azc-GN-f97" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="0DL-Bc-g6v" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YXn-s9-FN2">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="2mM-Ak-dlT"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qCO-wm-3KU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-554" y="454"/>
+            <point key="canvasLocation" x="-828" y="225"/>
         </scene>
         <!--Tutorial-->
         <scene sceneID="yVw-FU-oaK">
@@ -180,8 +187,7 @@
                                 </constraints>
                                 <state key="normal" image="baselineShoppingCart24Px2"/>
                                 <connections>
-                                    <action selector="toShop:" destination="cs8-6S-7QA" eventType="touchUpInside" id="HdG-7r-W28"/>
-                                    <segue destination="d26-jc-Ekn" kind="show" identifier="showStore" id="g5e-Cv-jXZ"/>
+                                    <segue destination="0DL-Bc-g6v" kind="show" id="yKG-8J-p0O"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -225,7 +231,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bQV-La-2Tn" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="60" y="702"/>
+            <point key="canvasLocation" x="28.794642857142854" y="704.34782608695662"/>
         </scene>
         <!--Game Level View Controller-->
         <scene sceneID="maT-JQ-3bF">

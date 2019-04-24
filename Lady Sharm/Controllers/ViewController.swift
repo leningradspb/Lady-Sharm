@@ -12,6 +12,10 @@ import FBSDKLoginKit
 
 class ViewController: UIViewController {
     
+    @IBAction func toShop(_ sender: UIButton) {
+        //(UserDefaults.standard.integer(forKey: "Scores")
+        performSegue(withIdentifier: "showStore", sender: self)
+    }
     var tutorialStatus = 0
     
     @IBAction func exitAction(_ sender: UIButton) {
@@ -141,6 +145,9 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "vcToSettings", let dvc = segue.destination as? SettingsViewController {
             dvc.audioSettings = audioSettings
+        }
+        if segue.identifier == "showStore", let dvc = segue.destination as? StoreViewController {
+            dvc.text = String((UserDefaults.standard.integer(forKey: "Scores")))
         }
     }
     

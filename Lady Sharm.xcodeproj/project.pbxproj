@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		2602C322226C59B400675467 /* FirstTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2602C321226C59B400675467 /* FirstTutorialViewController.swift */; };
 		2602C324226C5A3300675467 /* SecondTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2602C323226C5A3300675467 /* SecondTutorialViewController.swift */; };
+		2611C71B22705B310084EBCC /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2611C71A22705B310084EBCC /* StoreViewController.swift */; };
+		2611C72022705DB80084EBCC /* Store.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2611C71F22705DB80084EBCC /* Store.storyboard */; };
+		2611C722227064300084EBCC /* StoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2611C721227064300084EBCC /* StoreCollectionViewCell.swift */; };
 		2614F188226C650E00A0EC36 /* BasedTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2614F187226C650E00A0EC36 /* BasedTutorialViewController.swift */; };
 		2614F18A226C6B1500A0EC36 /* ThirdTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2614F189226C6B1500A0EC36 /* ThirdTutorialViewController.swift */; };
 		2614F18D226CB02C00A0EC36 /* UIButtonExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2614F18C226CB02C00A0EC36 /* UIButtonExtention.swift */; };
@@ -48,6 +51,9 @@
 		192728356E98B8251E18D050 /* Pods-Lady Sharm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lady Sharm.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lady Sharm/Pods-Lady Sharm.release.xcconfig"; sourceTree = "<group>"; };
 		2602C321226C59B400675467 /* FirstTutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTutorialViewController.swift; sourceTree = "<group>"; };
 		2602C323226C5A3300675467 /* SecondTutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTutorialViewController.swift; sourceTree = "<group>"; };
+		2611C71A22705B310084EBCC /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
+		2611C71F22705DB80084EBCC /* Store.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Store.storyboard; sourceTree = "<group>"; };
+		2611C721227064300084EBCC /* StoreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCollectionViewCell.swift; sourceTree = "<group>"; };
 		2614F187226C650E00A0EC36 /* BasedTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasedTutorialViewController.swift; sourceTree = "<group>"; };
 		2614F189226C6B1500A0EC36 /* ThirdTutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTutorialViewController.swift; sourceTree = "<group>"; };
 		2614F18C226CB02C00A0EC36 /* UIButtonExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtention.swift; sourceTree = "<group>"; };
@@ -110,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				262C9EB92257A0AC007CBBAA /* CellCollectionViewCell.swift */,
+				2611C721227064300084EBCC /* StoreCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -154,8 +161,9 @@
 				262C9EBC2258129F007CBBAA /* Sounds */,
 				2679DCBE225B78C90080BA26 /* Fonts */,
 				2670354122577A63008952A5 /* AppDelegate.swift */,
-				26CC9FAF226DA8E900CAD4C5 /* Tutorial.storyboard */,
 				2670354522577A63008952A5 /* Main.storyboard */,
+				26CC9FAF226DA8E900CAD4C5 /* Tutorial.storyboard */,
+				2611C71F22705DB80084EBCC /* Store.storyboard */,
 				2670354B22577A65008952A5 /* Assets.xcassets */,
 				2670354D22577A65008952A5 /* LaunchScreen.storyboard */,
 				2670355022577A65008952A5 /* Info.plist */,
@@ -182,6 +190,7 @@
 			children = (
 				2670354322577A63008952A5 /* ViewController.swift */,
 				2670355F22578135008952A5 /* SettingsViewController.swift */,
+				2611C71A22705B310084EBCC /* StoreViewController.swift */,
 				267035612257814E008952A5 /* GameLevelViewController.swift */,
 				2670356322578178008952A5 /* GameSceneViewController.swift */,
 				267035652257818D008952A5 /* EndGameViewController.swift */,
@@ -287,6 +296,7 @@
 				2670354F22577A65008952A5 /* LaunchScreen.storyboard in Resources */,
 				2679DCBD225B4D040080BA26 /* Mush.wav in Resources */,
 				2679DCC7225B79280080BA26 /* Roboto-Light.ttf in Resources */,
+				2611C72022705DB80084EBCC /* Store.storyboard in Resources */,
 				2679DCC5225B79280080BA26 /* Roboto-Bold.ttf in Resources */,
 				262C9EC3225812C6007CBBAA /* dingwrong.wav in Resources */,
 				262C9EC1225812C6007CBBAA /* dingcorrect.wav in Resources */,
@@ -359,12 +369,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2611C71B22705B310084EBCC /* StoreViewController.swift in Sources */,
 				267035622257814E008952A5 /* GameLevelViewController.swift in Sources */,
 				2670354422577A63008952A5 /* ViewController.swift in Sources */,
 				2670354A22577A64008952A5 /* Lady_Sharm.xcdatamodeld in Sources */,
 				2670356022578135008952A5 /* SettingsViewController.swift in Sources */,
 				2670354222577A63008952A5 /* AppDelegate.swift in Sources */,
 				2602C322226C59B400675467 /* FirstTutorialViewController.swift in Sources */,
+				2611C722227064300084EBCC /* StoreCollectionViewCell.swift in Sources */,
 				2614F18D226CB02C00A0EC36 /* UIButtonExtention.swift in Sources */,
 				2670355822577AE5008952A5 /* Card.swift in Sources */,
 				2614F188226C650E00A0EC36 /* BasedTutorialViewController.swift in Sources */,

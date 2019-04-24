@@ -18,8 +18,6 @@
         <!--First Tutorial View Controller-->
         <scene sceneID="U33-b1-UBH">
             <objects>
-                <exit id="sCT-5j-AQC" userLabel="Exit" sceneMemberID="exit"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wGa-Hb-v7D" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="FirstTutorialViewControllerID" id="mZc-jM-aHo" customClass="FirstTutorialViewController" customModule="Lady_Sharm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8WF-vJ-yix">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
@@ -114,14 +112,14 @@
                         <segue destination="HD6-lz-fON" kind="presentation" identifier="FirstToSecond" modalTransitionStyle="crossDissolve" id="DYt-jK-xcl"/>
                     </connections>
                 </viewController>
+                <exit id="sCT-5j-AQC" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wGa-Hb-v7D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1301" y="1307"/>
         </scene>
         <!--Second Tutorial View Controller-->
         <scene sceneID="eXR-b6-WUm">
             <objects>
-                <exit id="f2K-cX-ZNF" userLabel="Exit" sceneMemberID="exit"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ef5-Fn-abh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="SecondTutorialViewControllerID" id="HD6-lz-fON" customClass="SecondTutorialViewController" customModule="Lady_Sharm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s7N-P2-GMe">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
@@ -253,14 +251,14 @@
                         <segue destination="gmC-Gd-bpP" kind="presentation" identifier="SecondToThird" modalTransitionStyle="crossDissolve" id="h2l-UQ-iKO"/>
                     </connections>
                 </viewController>
+                <exit id="f2K-cX-ZNF" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ef5-Fn-abh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-532" y="1306"/>
         </scene>
         <!--Third Tutorial View Controller-->
         <scene sceneID="Df3-qb-Vrg">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="76F-bR-OZK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="ETw-fH-FCe" userLabel="Exit" sceneMemberID="exit"/>
                 <viewController storyboardIdentifier="ThirdTutorialViewControllerID" id="gmC-Gd-bpP" customClass="ThirdTutorialViewController" customModule="Lady_Sharm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3MP-gE-169">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
@@ -388,6 +386,8 @@
                         <segue destination="HD6-lz-fON" kind="presentation" identifier="ThirdToSecond" modalTransitionStyle="crossDissolve" id="Pwc-3E-K6g"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="76F-bR-OZK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ETw-fH-FCe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="327" y="1306"/>
         </scene>
