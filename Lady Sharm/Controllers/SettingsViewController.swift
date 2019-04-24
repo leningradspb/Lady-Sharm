@@ -153,6 +153,7 @@ class SettingsViewController: UIViewController {
                         let buttonTextLogin = NSAttributedString(string: "Выйти из ФБ")
                         self?.fbLoginButtonOutlet.setAttributedTitle(buttonTextLogin, for: .normal)
                     }
+                    
                 
                 }
                 }
