@@ -30,8 +30,10 @@ class CellCollectionViewCell: UICollectionViewCell {
             frontImage.alpha = 1
         }
         
+        // MARK: УСТАНОВИЛ ПРОЗРАЧНУЮ БЭКИМЭДДЖ. backImage.image
         // установить фронт имэдж
-        frontImage.image = UIImage(named: card.imageName)
+        frontImage.image    = UIImage(named: card.imageName)
+        backImage.image     = UIImage(named: card.backImageName)
         
         // решить баг переиспользования ячеек
         if card.isFlipped == true {

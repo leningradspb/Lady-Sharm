@@ -9,9 +9,15 @@
 import Foundation
 
 class Scores {
-    private(set) var score: Int = 0 {
+    var score: Int = 0 {
         didSet {
+            NotificationCenter.default.post(Notification(name: Notification.Name.ScoreDidChange, object: self))
             UserDefaults.standard.set(score, forKey: "Score")
             }
     }
+
+}
+
+extension Notification.Name {
+    static let ScoreDidChange = Notification.Name("ScoreDidChange")
 }

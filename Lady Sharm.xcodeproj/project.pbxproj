@@ -21,6 +21,7 @@
 		262C9EC2225812C6007CBBAA /* cardflip.wav in Resources */ = {isa = PBXBuildFile; fileRef = 262C9EBE225812C6007CBBAA /* cardflip.wav */; };
 		262C9EC3225812C6007CBBAA /* dingwrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 262C9EBF225812C6007CBBAA /* dingwrong.wav */; };
 		262C9EC4225812C6007CBBAA /* shuffle.wav in Resources */ = {isa = PBXBuildFile; fileRef = 262C9EC0225812C6007CBBAA /* shuffle.wav */; };
+		266092F92271AB6500FC1571 /* ShopMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266092F82271AB6500FC1571 /* ShopMenu.swift */; };
 		2670354222577A63008952A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2670354122577A63008952A5 /* AppDelegate.swift */; };
 		2670354422577A63008952A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2670354322577A63008952A5 /* ViewController.swift */; };
 		2670354722577A63008952A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2670354522577A63008952A5 /* Main.storyboard */; };
@@ -43,7 +44,10 @@
 		2679DCC8225B79280080BA26 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2679DCC3225B79280080BA26 /* Roboto-Medium.ttf */; };
 		2679DCCA225B7A900080BA26 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2679DCC9225B7A900080BA26 /* Roboto-Regular.ttf */; };
 		2688233E225A26BF00D29FA9 /* Scores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2688233D225A26BF00D29FA9 /* Scores.swift */; };
+		26B1AB7C2270AA1600628781 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1AB7B2270AA1600628781 /* Shop.swift */; };
+		26B1AB7E2270AB4000628781 /* Thems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1AB7D2270AB4000628781 /* Thems.swift */; };
 		26CC9FB0226DA8E900CAD4C5 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26CC9FAF226DA8E900CAD4C5 /* Tutorial.storyboard */; };
+		26E9FCD22271DF6D00889A8A /* ByuingSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E9FCD12271DF6D00889A8A /* ByuingSettings.swift */; };
 		3EBA62ABFF4309B48D084160 /* Pods_Lady_Sharm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E720BAC0A4FBF67998243BA6 /* Pods_Lady_Sharm.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +67,7 @@
 		262C9EBE225812C6007CBBAA /* cardflip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardflip.wav; sourceTree = "<group>"; };
 		262C9EBF225812C6007CBBAA /* dingwrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dingwrong.wav; sourceTree = "<group>"; };
 		262C9EC0225812C6007CBBAA /* shuffle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shuffle.wav; sourceTree = "<group>"; };
+		266092F82271AB6500FC1571 /* ShopMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopMenu.swift; sourceTree = "<group>"; };
 		2670353E22577A63008952A5 /* Lady Sharm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lady Sharm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2670354122577A63008952A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2670354322577A63008952A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,7 +92,10 @@
 		2679DCC3225B79280080BA26 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		2679DCC9225B7A900080BA26 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		2688233D225A26BF00D29FA9 /* Scores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scores.swift; sourceTree = "<group>"; };
+		26B1AB7B2270AA1600628781 /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
+		26B1AB7D2270AB4000628781 /* Thems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thems.swift; sourceTree = "<group>"; };
 		26CC9FAF226DA8E900CAD4C5 /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
+		26E9FCD12271DF6D00889A8A /* ByuingSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByuingSettings.swift; sourceTree = "<group>"; };
 		E720BAC0A4FBF67998243BA6 /* Pods_Lady_Sharm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lady_Sharm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCBA2D9DE234FB3272946625 /* Pods-Lady Sharm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lady Sharm.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lady Sharm/Pods-Lady Sharm.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -175,11 +183,15 @@
 		2670355922577B5C008952A5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				266092F82271AB6500FC1571 /* ShopMenu.swift */,
 				2614F187226C650E00A0EC36 /* BasedTutorialViewController.swift */,
 				2670355722577AE5008952A5 /* Card.swift */,
+				26B1AB7B2270AA1600628781 /* Shop.swift */,
+				26B1AB7D2270AB4000628781 /* Thems.swift */,
 				2670355C22578090008952A5 /* CardModel.swift */,
 				2670356D22578808008952A5 /* AudioPlayer.swift */,
 				262C9EB722578BAC007CBBAA /* AudioSettings.swift */,
+				26E9FCD12271DF6D00889A8A /* ByuingSettings.swift */,
 				2688233D225A26BF00D29FA9 /* Scores.swift */,
 			);
 			path = Model;
@@ -369,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				266092F92271AB6500FC1571 /* ShopMenu.swift in Sources */,
 				2611C71B22705B310084EBCC /* StoreViewController.swift in Sources */,
 				267035622257814E008952A5 /* GameLevelViewController.swift in Sources */,
 				2670354422577A63008952A5 /* ViewController.swift in Sources */,
@@ -378,17 +391,20 @@
 				2602C322226C59B400675467 /* FirstTutorialViewController.swift in Sources */,
 				2611C722227064300084EBCC /* StoreCollectionViewCell.swift in Sources */,
 				2614F18D226CB02C00A0EC36 /* UIButtonExtention.swift in Sources */,
+				26E9FCD22271DF6D00889A8A /* ByuingSettings.swift in Sources */,
 				2670355822577AE5008952A5 /* Card.swift in Sources */,
 				2614F188226C650E00A0EC36 /* BasedTutorialViewController.swift in Sources */,
 				262C9EB822578BAC007CBBAA /* AudioSettings.swift in Sources */,
 				2614F18A226C6B1500A0EC36 /* ThirdTutorialViewController.swift in Sources */,
 				2670355D22578090008952A5 /* CardModel.swift in Sources */,
 				2602C324226C5A3300675467 /* SecondTutorialViewController.swift in Sources */,
+				26B1AB7E2270AB4000628781 /* Thems.swift in Sources */,
 				262C9EBA2257A0AC007CBBAA /* CellCollectionViewCell.swift in Sources */,
 				26703568225781A5008952A5 /* PrivacyViewController.swift in Sources */,
 				2688233E225A26BF00D29FA9 /* Scores.swift in Sources */,
 				2670356422578178008952A5 /* GameSceneViewController.swift in Sources */,
 				267035662257818D008952A5 /* EndGameViewController.swift in Sources */,
+				26B1AB7C2270AA1600628781 /* Shop.swift in Sources */,
 				2670356E22578808008952A5 /* AudioPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

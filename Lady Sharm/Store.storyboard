@@ -50,10 +50,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Темы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9lm-Ev-U20">
-                                <rect key="frame" x="16" y="72" width="53" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Скины карточек" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9lm-Ev-U20">
+                                <rect key="frame" x="16" y="72" width="157" height="24"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="53" id="6Iv-8e-bXk"/>
+                                    <constraint firstAttribute="width" constant="157" id="6Iv-8e-bXk"/>
                                     <constraint firstAttribute="height" constant="24" id="8Fr-bK-QBP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="20"/>
@@ -94,14 +94,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="255" height="101"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ure-f7-kJF">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="skin1" translatesAutoresizingMaskIntoConstraints="NO" id="ure-f7-kJF">
                                                     <rect key="frame" x="6" y="6" width="88" height="88"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="88" id="4oc-3K-HpL"/>
                                                         <constraint firstAttribute="width" constant="88" id="tLH-co-8iv"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAR-RX-nSf">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAR-RX-nSf">
                                                     <rect key="frame" x="100" y="10" width="120" height="19"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="19" id="VTh-JI-QtO"/>
@@ -121,8 +121,8 @@
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qmf-r1-6Ps">
-                                                    <rect key="frame" x="144" y="29" width="8" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qmf-r1-6Ps">
+                                                    <rect key="frame" x="144" y="29" width="24" height="17"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -133,6 +133,7 @@
                                                         <constraint firstAttribute="width" constant="140" id="QwV-Vp-udP"/>
                                                         <constraint firstAttribute="height" constant="30" id="kJr-dd-39q"/>
                                                     </constraints>
+                                                    <state key="normal" backgroundImage="btnInstalled"/>
                                                     <connections>
                                                         <action selector="buttonCellAction:" destination="toE-MR-O7V" eventType="touchUpInside" id="dYt-1M-AFa"/>
                                                     </connections>
@@ -196,6 +197,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="btnInstalled" width="148" height="36"/>
         <image name="icnBack" width="24" height="24"/>
+        <image name="skin1" width="106" height="106"/>
     </resources>
 </document>

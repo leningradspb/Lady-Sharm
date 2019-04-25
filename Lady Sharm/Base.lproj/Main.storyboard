@@ -67,7 +67,7 @@
                 <viewControllerPlaceholder storyboardName="Store" id="d26-jc-Ekn" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="azc-GN-f97" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-554" y="454"/>
+            <point key="canvasLocation" x="-614" y="701"/>
         </scene>
         <!--Tutorial-->
         <scene sceneID="yVw-FU-oaK">
@@ -292,7 +292,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Уровень сложности" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="339-iL-GLG">
-                                <rect key="frame" x="239.5" y="26" width="188" height="23.5"/>
+                                <rect key="frame" x="240.5" y="26" width="186.5" height="23.5"/>
                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="20"/>
                                 <color key="textColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>

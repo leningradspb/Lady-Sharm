@@ -12,6 +12,7 @@ import FBSDKLoginKit
 
 class ViewController: UIViewController {
     
+    let score = Scores().score
     @IBAction func toShop(_ sender: UIButton) {
         //(UserDefaults.standard.integer(forKey: "Scores")
         performSegue(withIdentifier: "showStore", sender: self)
@@ -52,6 +53,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var allPointsLabel: UILabel!
     private var observer: NSObjectProtocol?
+    private var observerTwo: NSObjectProtocol?
     private var audioSettings = AudioSettings()
     private func setupAudioPlayer() {
         if audioSettings.isMusicOn {
@@ -112,10 +114,13 @@ class ViewController: UIViewController {
         UserDefaults.standard.integer(forKey: "Scores")
         print(UserDefaults.standard.integer(forKey: "Scores"))
        allPointsLabel.text = "ОЧКИ: \(UserDefaults.standard.integer(forKey: "Scores"))"
+       // allPointsLabel.text = "ОЧКИ: \(UserDefaults.standard.integer(forKey: "Score"))"
         
         observer = NotificationCenter.default.addObserver(forName: Notification.Name.AudioSettingsDidChange, object: self.audioSettings, queue: OperationQueue.main) { [unowned self] (notification) in
             self.setupAudioPlayer()
         }
+        
+        
         setupAudioPlayer()
         
         fetchProfile()
@@ -148,6 +153,7 @@ class ViewController: UIViewController {
         }
         if segue.identifier == "showStore", let dvc = segue.destination as? StoreViewController {
             dvc.text = String((UserDefaults.standard.integer(forKey: "Scores")))
+          //dvc.text = String((UserDefaults.standard.integer(forKey: "Score")))
         }
     }
     
@@ -180,12 +186,14 @@ class ViewController: UIViewController {
         
         guard let lblFromUnwind = segue.source as? EndGameViewController else { return }
         UserDefaults.standard.integer(forKey: "Scores")
+        // UserDefaults.standard.integer(forKey: "Score")
         
         currentPoints = UserDefaults.standard.integer(forKey: "Scores") + lblFromUnwind.lableInt
         //currentPoints = currentPoints + Int(lblFromUnwind.pointsLabel.text ?? "0")!
         allPointsLabel.text = "ОЧКИ: \(currentPoints)"
         
         UserDefaults.standard.set(currentPoints, forKey: "Scores")
+       // UserDefaults.standard.set(Scores().score, forKey: "Score")
         
     }
     

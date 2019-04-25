@@ -10,6 +10,7 @@ import Foundation
 
 class Card {
     var imageName = ""
+    var backImageName = "skin3"
     var isFlipped = false
     var isMatched = false
 }

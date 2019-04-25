@@ -22,6 +22,7 @@ class GameSceneViewController: UIViewController {
     var model = CardModel()
     // вспомогательная переменная
     var cardArray = [Card]()
+
     
     // переменная для определения перевернута карта или нет
     var firstCardIsFlippedIndex: IndexPath?
@@ -58,6 +59,8 @@ class GameSceneViewController: UIViewController {
         // делегаты
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        
         
         // вызвать гет кардс(массив карт) и передать данные в вспомогательную переменную
      

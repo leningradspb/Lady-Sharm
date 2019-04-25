@@ -24,6 +24,7 @@ class CardModel {
             let cardOne = Card()
             // присвоить фрон имэдж из слуайного номера
             cardOne.imageName = String(randomNumber)
+          //  cardOne.backImageName = "skin3"
             // добавить в массив карт
             generatedCardsArray.append(cardOne)
             
