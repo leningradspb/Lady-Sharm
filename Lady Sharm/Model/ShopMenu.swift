@@ -8,9 +8,10 @@
 
 import Foundation
 
-struct ShopMenu {
+class ShopMenu {
+    var id: Int!
     var itemName: String?
     var price: String?
-    var imageName: String?
+//    var imageName: String?
     var buttonImageName: String?
 }

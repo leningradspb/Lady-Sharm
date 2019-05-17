@@ -8,18 +8,32 @@
 
 import UIKit
 
+
+protocol StoreCellDelegate {
+    
+    func didTapStoreCellWithId(productId: Int) -> Void
+}
+
+
 class StoreCollectionViewCell: UICollectionViewCell {
     
     
-    var vcPoints = ViewController()
-   var priceOfIcon = 500
+    //var buyingSettings = ByuingSettings()
+    //var cardModel = CardModel()
+//    var card = Card()
     
-    var shopMenuModel: ShopMenu? {
+    var vcPoints = ViewController()
+    var priceOfIcon = 500
+    var text = String()
+    
+    var delegate: StoreCellDelegate!
+    
+    var shopMenuModel: Product? {
         didSet {
-            descriptionLabel.text = shopMenuModel?.itemName
-            priceLabel.text       = shopMenuModel?.price
-            if let image          = shopMenuModel?.imageName {
-                imageViewCell.image = UIImage(named: image)
+            descriptionLabel.text     = shopMenuModel?.itemName
+            priceLabel.text           = shopMenuModel?.price
+            if let image              = shopMenuModel?.imageName {
+                imageViewCell.image   = UIImage(named: image)
             }
             if let imageButton = shopMenuModel?.buttonImageName {
                 buttonCellOutlet.setBackgroundImage(UIImage(named: imageButton), for: .normal)
@@ -27,30 +41,41 @@ class StoreCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    override func awakeFromNib() {
+        
+      //  buyingSettings.isInstalled = false
+       // buyingSettings.isByuing = false
+        
+        if UserDefaults.standard.object(forKey: "priceLabel.text") != nil {
+        UserDefaults.standard.object(forKey: "priceLabel.text")
+        
+        } else  {
+            priceLabel.text = "5000"
+        }
+        if UserDefaults.standard.object(forKey: "imageButton") != nil {
+            UserDefaults.standard.object(forKey: "imageButton")
+        }
+    }
+    
     @IBAction func buttonCellAction(_ sender: UIButton) {
         
-        if priceLabel.text == "0" {
-            buttonCellOutlet.setBackgroundImage(UIImage(named: "btnInstall"), for: .normal)
-            priceLabel.text = String(Int(priceLabel.text!)! - 5000)
-            
-            
-        }
         
-        //sender.setBackgroundImage(UIImage(named: "btnInstalled"), for: .normal)
-     /*   if  buttonCellOutlet.currentBackgroundImage == UIImage(named: "btnBuy")   {
-           // Int(lable.pointsLabelStore.text!) = Int(lable.pointsLabelStore.text) - Int(priceLabel.text!)
-
-        }
+        let name        = Notification.Name(rawValue: keyOne)
+     //   let nameTwo     = Notification.Name(rawValue: keyTwo)
+       // let nameThree   = Notification.Name(rawValue: keyTthee)
         
-        if  buttonCellOutlet.currentBackgroundImage == UIImage(named: "btnInstalled") || buttonCellOutlet.currentBackgroundImage == UIImage(named: "btnInstall") {
-            
-           priceLabel.text = "0"
-            
-            UserDefaults.standard.set(priceLabel.text, forKey: "priceLabel")
-        } */
+        NotificationCenter.default.post(name: name, object: nil)
+        UserDefaults.standard.set(keyForBasedController, forKey: keyForBasedController)
+       // NotificationCenter.default.post(name: nameTwo, object: nil)
+      //  NotificationCenter.default.post(name: nameThree, object: nil)
+        
+//        card.backImageName = "skin2"
         
         
-    }
+        self.delegate.didTapStoreCellWithId(productId: (shopMenuModel?.id)!)
+        
+    }// конец кнопки
+    
     @IBOutlet weak var buttonCellOutlet: UIButton!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!

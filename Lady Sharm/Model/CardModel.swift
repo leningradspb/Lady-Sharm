@@ -10,6 +10,9 @@ import Foundation
 
 class CardModel {
     
+    
+  //  var storeInformation = String()
+    
     func getCardSixteenCards() -> [Card] {
         
         // массив с картами
@@ -20,10 +23,12 @@ class CardModel {
             
             let randomNumber = arc4random_uniform(24) + 1
             
+            
             // Первая карта
             let cardOne = Card()
             // присвоить фрон имэдж из слуайного номера
             cardOne.imageName = String(randomNumber)
+           // cardOne.backImageName = storeInformation
           //  cardOne.backImageName = "skin3"
             // добавить в массив карт
             generatedCardsArray.append(cardOne)
@@ -32,6 +37,7 @@ class CardModel {
             let cardTwo = Card()
             // присвоить такое же имя и картинку
             cardTwo.imageName = String(randomNumber)
+           // cardTwo.backImageName = storeInformation
             // добавить в массив
             generatedCardsArray.append(cardTwo)
             }

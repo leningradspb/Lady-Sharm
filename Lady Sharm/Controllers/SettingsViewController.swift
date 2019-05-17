@@ -11,7 +11,7 @@ import MessageUI
 import FBSDKLoginKit
 
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: BasedTutorialViewController {
     
     
 //  var loginButtonSVC = FBButtonClass()
@@ -170,7 +170,7 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
         switch result {
         case .cancelled:
             print("Отправка отменена")
-            case .sent:
+        case .sent:
             print("Сообщение отправлено")
         case .failed:
             print("Ошибка отправки")

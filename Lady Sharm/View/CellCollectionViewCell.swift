@@ -32,6 +32,9 @@ class CellCollectionViewCell: UICollectionViewCell {
         
         // MARK: УСТАНОВИЛ ПРОЗРАЧНУЮ БЭКИМЭДДЖ. backImage.image
         // установить фронт имэдж
+        //MARK: Установить frontImage and backImage
+        let cardSkin: Product =  CardStyleSingleton.shared.getCurrentCardSkin()
+        card.backImageName = cardSkin.imageName
         frontImage.image    = UIImage(named: card.imageName)
         backImage.image     = UIImage(named: card.backImageName)
         

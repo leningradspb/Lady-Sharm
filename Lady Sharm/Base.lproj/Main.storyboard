@@ -220,6 +220,7 @@
                         <outlet property="fbLoginButton" destination="Rnq-1x-yex" id="PdR-9Y-Blu"/>
                         <outlet property="imageView" destination="gjJ-du-1My" id="wqV-ez-3XW"/>
                         <outlet property="nameLabel" destination="ych-gq-5qy" id="XTR-Kh-Mjv"/>
+                        <outlet property="viewBackgroundImage" destination="rNI-2A-Nc6" id="nY6-bR-VLe"/>
                         <segue destination="m39-6p-e2O" kind="show" identifier="vcToTutorial" id="ltT-mf-bam"/>
                     </connections>
                 </viewController>
@@ -358,6 +359,7 @@
                         <viewLayoutGuide key="safeArea" id="Vml-gk-aJP"/>
                     </view>
                     <connections>
+                        <outlet property="backImageView" destination="13j-9y-Q2z" id="Jne-cw-Ku9"/>
                         <outlet property="extreemBO" destination="Kn5-nF-1Vh" id="Q30-fe-G72"/>
                         <outlet property="extreemImage" destination="wjS-h7-PCm" id="emy-d3-5n8"/>
                         <outlet property="hardBO" destination="Qqx-BB-Tf1" id="pCW-nQ-DeK"/>

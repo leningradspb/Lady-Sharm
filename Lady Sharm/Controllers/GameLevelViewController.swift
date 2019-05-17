@@ -8,8 +8,11 @@
 
 import UIKit
 
-class GameLevelViewController: UIViewController {
+class GameLevelViewController: BasedTutorialViewController {
     
+    
+    
+    @IBOutlet weak var backImageView: UIImageView!
     let model = CardModel()
     
     @IBOutlet weak var lableValueLevel: UILabel!
@@ -56,8 +59,28 @@ class GameLevelViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         setupColorsOfButtons()
         stratConditionsOfButtons()
+          createObservers()
+    }
+    
+    //TODO: Что-то не работает
+    let firstTapped     = Notification.Name(rawValue: keyOne)
+    
+    func createObservers() {
+        
+        // first
+        NotificationCenter.default.addObserver(self, selector: #selector(GameLevelViewController.updateImage(notification:)), name: firstTapped, object: nil)
+    }
+    
+    @objc func updateImage(notification: NSNotification) {
+        
+        
+        print(" ВОШЕЛ")
+        
+        backImageView.image = UIImage(named: "bg1")
     }
     
     func setupColorsOfButtons() {

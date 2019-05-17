@@ -9,8 +9,14 @@
 import UIKit
 import FBSDKLoginKit
 
+//let keyOne   = "First image"
 
-class ViewController: UIViewController {
+class ViewController: BasedTutorialViewController {
+    
+    
+    @IBOutlet weak var viewBackgroundImage: UIImageView!
+    
+    let firstTapped     = Notification.Name(rawValue: keyOne)
     
     let score = Scores().score
     @IBAction func toShop(_ sender: UIButton) {
@@ -25,6 +31,8 @@ class ViewController: UIViewController {
     }
     @IBOutlet weak var exitButtonOutlet: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
+    
+    // ЭТОТ ИМЭДЖ ВЬЮ НЕВИДИМЫЙ!!!!!!
     @IBOutlet weak var imageView: UIImageView!
     
     
@@ -112,7 +120,7 @@ class ViewController: UIViewController {
         allPointsLabel.textColor = UIColor(red: 250/255, green: 253/255, blue: 2/255, alpha: 1)
         
         UserDefaults.standard.integer(forKey: "Scores")
-        print(UserDefaults.standard.integer(forKey: "Scores"))
+        
        allPointsLabel.text = "ОЧКИ: \(UserDefaults.standard.integer(forKey: "Scores"))"
        // allPointsLabel.text = "ОЧКИ: \(UserDefaults.standard.integer(forKey: "Score"))"
         
@@ -124,9 +132,31 @@ class ViewController: UIViewController {
         setupAudioPlayer()
         
         fetchProfile()
+        
+        createObservers()
+        
+     //   self.imageView.image =
        
     } // end ViewDidLoad
     
+ //   let firstTapped     = Notification.Name(rawValue: keyOne)
+    func createObservers() {
+        
+        // first
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.updateImage(notification:)), name: firstTapped, object: nil)
+    }
+    
+    @objc func updateImage(notification: NSNotification) {
+        
+        
+        print(" ВОШЕЛ")
+        
+            viewBackgroundImage.image = UIImage(named: "bg1")
+           // view.addSubview(imageView)
+        
+        
+       // cell.backImage.image = UIImage(named: "skin1")
+    }
     
     // MARK: FB Button
 /*    func setupFBloginButton() {
@@ -182,6 +212,15 @@ class ViewController: UIViewController {
             let buttonTextLogout = NSAttributedString(string: "Войти в ФБ")
             fbLoginButton.setAttributedTitle(buttonTextLogout, for: .normal)
             
+        }
+        
+        if let lblFromStore = segue.source as? StoreViewController {
+        //UserDefaults.standard.integer(forKey: "Scores")
+            if UserDefaults.standard.integer(forKey: "Scores") != Int(lblFromStore.text) {
+            currentPoints = UserDefaults.standard.integer(forKey: "Scores") - 5000
+                allPointsLabel.text = "ОЧКИ: \(currentPoints)"
+                UserDefaults.standard.set(currentPoints, forKey: "Scores")
+            }
         }
         
         guard let lblFromUnwind = segue.source as? EndGameViewController else { return }

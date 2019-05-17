@@ -10,7 +10,7 @@ import Foundation
 
 class ByuingSettings {
     
-    var isByuing = true {
+    var isByuing = false {
         didSet {
             print("isByuing is: \(isByuing)")
             NotificationCenter.default.post(Notification(name: Notification.Name.ByuingSettingsDidChange, object: self))
@@ -18,12 +18,26 @@ class ByuingSettings {
         }
     }
     
+    var isInstalled = false {
+        didSet {
+            print("isByuing is: \(isInstalled)")
+            NotificationCenter.default.post(Notification(name: Notification.Name.ByuingSettingsDidChange, object: self))
+            UserDefaults.standard.set(isInstalled, forKey: "isInstalled")
+        }
+    }
+    
     
     init() {
+        
         if UserDefaults.standard.value(forKey: "isByuing") != nil {
             isByuing = UserDefaults.standard.bool(forKey: "isByuing")
         }
-    }
+            if UserDefaults.standard.value(forKey: "isInstalled") != nil {
+                isByuing = UserDefaults.standard.bool(forKey: "isInstalled")
+            }
+    
+    } // end of init
+    
 }
 
 extension Notification.Name {

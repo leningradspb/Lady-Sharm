@@ -7,22 +7,34 @@
 
 import UIKit
 
-
+let keyForBasedController = "keyForBasedController"
 
 class BasedTutorialViewController: UIViewController {
-
+    
+    
     
     var backgroundImageView = UIImageView()
     
+    var basedImageName = ""
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if UserDefaults.standard.object(forKey: keyForBasedController) == nil {
+            basedImageName = "bgs"
+        } else {
+            basedImageName = "bg1"
+        }
 
         setupBackgroundImage()
+        
+        
     }
     
 
     func setupBackgroundImage() {
-        backgroundImageView.image = UIImage(named: "bgs")
+        backgroundImageView.image = UIImage(named: basedImageName)
         backgroundImageView.contentMode = .scaleAspectFill
         view.addSubview(backgroundImageView)
         view.sendSubviewToBack(backgroundImageView)

@@ -9,7 +9,25 @@
 import UIKit
 import AVFoundation
 
+
+let keyOne   = "First image"
+let keyTwo   = "Second image"
+let keyTthee = "Third image"
+
 class GameSceneViewController: UIViewController {
+    
+    let skinOne = "skin1"
+    let skinTwo = "skin2"
+    let skinThree = "skin3"
+    var currentSkin = ""
+    
+    let firstTapped     = Notification.Name(rawValue: keyOne)
+    let secondTapped    = Notification.Name(rawValue: keyTwo)
+    let thirdTapped     = Notification.Name(rawValue: keyTthee)
+    
+//    deinit {
+//        NotificationCenter.default.removeObserver(self)
+//    }
     
     private var observer: NSObjectProtocol?
     private var audioSettings = AudioSettings()
@@ -74,7 +92,33 @@ class GameSceneViewController: UIViewController {
          } // не работает */
         
         setupColors()
+       // createObservers()
     } // конец viewDidLoad
+    
+    
+  /*  func createObservers() {
+        
+        // first
+        NotificationCenter.default.addObserver(self, selector: #selector(GameSceneViewController.updateImage(notification:)), name: firstTapped, object: nil)
+    }
+    
+    @objc func updateImage(notification: NSNotification) {
+        
+        // TODO: НУЖНО ДОБАВИТЬ ИФЫ ПО ВЫБОРУ БЭКИМЭДЖА!!! СЕЙЧАС ПУСТОТА
+        print(" ВОШЕЛ")
+        
+        if notification.name == thirdTapped {
+            currentSkin = skinThree
+        } else if notification.name == secondTapped {
+            currentSkin = skinTwo
+        } else if notification.name == firstTapped {
+            currentSkin = skinOne
+        }
+        
+        
+        //cell.backImage.image = UIImage(named: "skin1")
+    } */
+   
     
     func setupColors() {
         pointsLabel.textColor = UIColor(red: 250/255, green: 253/255, blue: 2/255, alpha: 1)
@@ -146,6 +190,16 @@ extension GameSceneViewController: UICollectionViewDelegate, UICollectionViewDat
         let card = cardArray[indexPath.row]
         // установить карту из массива в фронт имэдж в коллекшвьюСелл (ячейка)
         cell.setCard(card)
+        
+        
+        
+        //MARK: cardSKIN
+         var cardSkin: Product =  CardStyleSingleton.shared.getCurrentCardSkin()
+         card.backImageName = cardSkin.imageName
+        
+     //   cell.backImage.image = UIImage(named: "skin2")
+        
+      // cell.backImage.image = UIImage(named: currentSkin)
         
         return cell
     }

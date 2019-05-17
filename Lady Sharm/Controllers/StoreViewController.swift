@@ -10,39 +10,15 @@ import UIKit
 
 class StoreViewController: BasedTutorialViewController {
     
+    var fPointsInt = 0
+    
     // отвечает за очки
-    var text = String()
-    var scores = Scores()
+    var text    = String()
+    var scores  = Scores()
     var isByu: ByuingSettings?
     
-    //let arrayOfImages = [UIImage(named: "skin1"), UIImage(named: "skin2"), UIImage(named: "skin3")]
-   // let arrayOfLabels = ["Стандарт", "Скин №1", "Скин №2"]
-   // let arrayOfButtons = [UIImage(named: "btnBuy"), UIImage(named: "btnInstalled"), UIImage(named: "btnInstall")]
-   // let arrayOfButtons = ["btnInstalled", "btnBuy", "btnBuy"]
     
-    var shopMenuArray: [ShopMenu] = {
-        var shopMenu = ShopMenu()
-        shopMenu.itemName = "Стандарт"
-        shopMenu.imageName = "skin1"
-        shopMenu.buttonImageName = "btnInstalled"
-        shopMenu.price = "0"
-        
-        
-        var shopMenu2 = ShopMenu()
-        shopMenu2.itemName = "Скин №1"
-        shopMenu2.imageName = "skin2"
-        shopMenu2.buttonImageName = "btnBuy"
-        shopMenu2.price = "5000"
-        
-        var shopMenu3 = ShopMenu()
-        shopMenu3.itemName = "Скин №2"
-        shopMenu3.imageName = "skin3"
-        shopMenu3.buttonImageName = "btnBuy"
-        shopMenu3.price = "50000"
-        
-        
-        return [shopMenu, shopMenu2, shopMenu3]
-    }()
+    var shopMenuArray: [Product] = ProductProvider.getProducts()
 
     @IBOutlet weak var collectionViewOutlet: UICollectionView!
     @IBOutlet weak var pointsLabelStore: UILabel!
@@ -53,16 +29,15 @@ class StoreViewController: BasedTutorialViewController {
         
         collectionViewOutlet.delegate = self
         collectionViewOutlet.dataSource = self
-        
+
+       // fBO.setBackgroundImage(UIImage(named: "btnByu"), for: .normal)
         
        // UserDefaults.standard.object(forKey: "priceLabelText") ?? "5000"
         
        setupLabelsColorsAndText()
         
+        
     } // end of vieDidLoad
-    
-
-    
     
     
     func setupLabelsColorsAndText() {
@@ -74,13 +49,12 @@ class StoreViewController: BasedTutorialViewController {
         pointsLabelStore.text = text
        // let stringScore = String(scores.score)
         
-        
     }
     
 }
 
 
-extension StoreViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+ extension StoreViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
        // return shopMenuArray.count
         
@@ -89,6 +63,8 @@ extension StoreViewController: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! StoreCollectionViewCell
+        
+        cell.delegate = self
      
         
        // cell.imageViewCell.image = UIImage(named: "bg2Sm")
@@ -101,14 +77,32 @@ extension StoreViewController: UICollectionViewDelegate, UICollectionViewDataSou
         
         let intPriceCellLabel = cell.priceLabel.text
         
-       if (Int(text)! < (Int(intPriceCellLabel!)!)) && (cell.buttonCellOutlet.currentBackgroundImage == UIImage(named: "btnBuy")) {
+
+     /*  if (Int(text)! < (Int(cell.priceLabel.text!)!)) && (cell.buttonCellOutlet.currentBackgroundImage == UIImage(named: "btnBuy")) {
             cell.buttonCellOutlet.isEnabled = false
-            
+        
             // MARK: Прописать алерт контроллер, убрать недоступность
-        }
+        } */
+        
+        /*  if ((Int(intPriceCellLabel!)!) <= Int(text)!) && Int(intPriceCellLabel!) != 0 {
+          //  text = String(Int(pointsLabelStore.text!)! - 5000)
+           // pointsLabelStore.text = text
+        } */
+        
+     //   cell.buttonCellAction(cell.buttonCellOutlet)
         
         return cell
         
     }
     
+}
+
+extension StoreViewController: StoreCellDelegate {
+    func didTapStoreCellWithId(productId: Int) {
+        
+        let storeManager = StoreManager()
+        
+        storeManager.handleProduct(productId: productId)
+        
+    }
 }

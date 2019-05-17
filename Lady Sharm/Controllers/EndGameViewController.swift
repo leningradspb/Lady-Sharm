@@ -10,6 +10,8 @@ import UIKit
 
 class EndGameViewController: UIViewController {
     
+    var score = Scores()
+    
     var label = UILabel()
     var lableInt = Scores().score
     
@@ -24,6 +26,8 @@ class EndGameViewController: UIViewController {
            pointsLabel.text = "0"
         } else {
             pointsLabel.text = pointsLabelFromSegue.text
+           // score.score += Int(pointsLabel.text!) ?? 0
+           // UserDefaults.standard.set(score.score, forKey: "Score")
         }
         timerLabel.text = timerLabelFromSegue.text
         
