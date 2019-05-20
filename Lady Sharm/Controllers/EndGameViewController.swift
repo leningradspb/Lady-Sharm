@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EndGameViewController: UIViewController {
+class EndGameViewController: BasedTutorialViewController {
     
     var score = Scores()
     

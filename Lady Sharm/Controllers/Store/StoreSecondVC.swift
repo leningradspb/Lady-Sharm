@@ -74,6 +74,16 @@ extension StoreSecondVC: StoreCellDelegate {
         let storeManager = StoreManager()
         
         storeManager.handleProduct(productId: productId)
-        
+        //MARK: - Notification POST (для обновления backgroundImageView в BasedVC)
+        let name1 = Notification.Name(rawValue: firstThemeIsSelectedKey)
+        let name2 = Notification.Name(rawValue: secondThemeIsSelectedKey)
+        let name3 = Notification.Name(rawValue: thirdThemeIsSelectedKey)
+        if productId == 4 {
+        NotificationCenter.default.post(name: name1, object: nil)
+        } else if productId == 5 {
+            NotificationCenter.default.post(name: name2, object: nil)
+        } else if productId == 6 {
+            NotificationCenter.default.post(name: name3, object: nil)
+        }
     }
 }

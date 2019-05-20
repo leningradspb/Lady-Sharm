@@ -15,11 +15,6 @@ class BasedTutorialViewController: UIViewController {
     
     let themeSkin: Product! =  ThemeStyleSingleton.shared.getCurrentThemeSkin()
     
-    
-    
-    
-    
-    
     var backgroundImageView = UIImageView()
     
     var basedImageName = ""
@@ -43,6 +38,31 @@ class BasedTutorialViewController: UIViewController {
         setupBackgroundImage()
         
         
+        createObservers()
+        
+    }
+    
+    //MARK: - OBSERVERS for update imageViewImage. 
+    func createObservers() {
+        //firstImage
+        NotificationCenter.default.addObserver(self, selector: #selector(updateImageViewImage(notification:)), name: Notification.Name(rawValue: firstThemeIsSelectedKey), object: nil)
+        
+        //secondImage
+         NotificationCenter.default.addObserver(self, selector: #selector(updateImageViewImage(notification:)), name: Notification.Name(rawValue: secondThemeIsSelectedKey), object: nil)
+        //thirdImage
+         NotificationCenter.default.addObserver(self, selector: #selector(updateImageViewImage(notification:)), name: Notification.Name(rawValue: thirdThemeIsSelectedKey), object: nil)
+    }
+    
+   @objc func updateImageViewImage(notification: NSNotification) {
+    
+    if notification.name == Notification.Name(rawValue: firstThemeIsSelectedKey) {
+        backgroundImageView.image = UIImage(named: "bg")
+    } else if notification.name == Notification.Name(rawValue: secondThemeIsSelectedKey) {
+        backgroundImageView.image = UIImage(named: "bg1")
+    } else if notification.name == Notification.Name(rawValue: thirdThemeIsSelectedKey) {
+        backgroundImageView.image = UIImage(named: "bg2")
+    }
+  
     }
     
 

@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class PrivacyViewController: UIViewController {
+class PrivacyViewController: BasedTutorialViewController {
     
     let webKitClass = WKWebView()
     

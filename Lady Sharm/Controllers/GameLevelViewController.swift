@@ -65,23 +65,7 @@ class GameLevelViewController: BasedTutorialViewController {
         stratConditionsOfButtons()
           createObservers()
     }
-    
-    //TODO: Что-то не работает
-    let firstTapped     = Notification.Name(rawValue: keyOne)
-    
-    func createObservers() {
-        
-        // first
-        NotificationCenter.default.addObserver(self, selector: #selector(GameLevelViewController.updateImage(notification:)), name: firstTapped, object: nil)
-    }
-    
-    @objc func updateImage(notification: NSNotification) {
-        
-        
-        print(" ВОШЕЛ")
-        
-        backImageView.image = UIImage(named: "bg1")
-    }
+
     
     func setupColorsOfButtons() {
         extreemBO.clipsToBounds = true

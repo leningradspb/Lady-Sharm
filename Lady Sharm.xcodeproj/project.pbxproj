@@ -25,6 +25,7 @@
 		26388225228EDBB100CEF517 /* SecondVCStoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26388224228EDBB100CEF517 /* SecondVCStoreCell.swift */; };
 		26388229228EE7BD00CEF517 /* ThemeStyleSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26388228228EE7BD00CEF517 /* ThemeStyleSingleton.swift */; };
 		26406ECE22897C5D0044E2FC /* Mush.wav in Resources */ = {isa = PBXBuildFile; fileRef = 26406ECD22897C5D0044E2FC /* Mush.wav */; };
+		265815AD2292B1E300609BA4 /* Mush.wav in Resources */ = {isa = PBXBuildFile; fileRef = 265815AC2292B1E300609BA4 /* Mush.wav */; };
 		266092F92271AB6500FC1571 /* ShopMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266092F82271AB6500FC1571 /* ShopMenu.swift */; };
 		2670354222577A63008952A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2670354122577A63008952A5 /* AppDelegate.swift */; };
 		2670354422577A63008952A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2670354322577A63008952A5 /* ViewController.swift */; };
@@ -78,6 +79,7 @@
 		26388224228EDBB100CEF517 /* SecondVCStoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVCStoreCell.swift; sourceTree = "<group>"; };
 		26388228228EE7BD00CEF517 /* ThemeStyleSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeStyleSingleton.swift; sourceTree = "<group>"; };
 		26406ECD22897C5D0044E2FC /* Mush.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Mush.wav; sourceTree = "<group>"; };
+		265815AC2292B1E300609BA4 /* Mush.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Mush.wav; sourceTree = "<group>"; };
 		266092F82271AB6500FC1571 /* ShopMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopMenu.swift; sourceTree = "<group>"; };
 		2670353E22577A63008952A5 /* Lady Sharm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lady Sharm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2670354122577A63008952A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				26406ECD22897C5D0044E2FC /* Mush.wav */,
+				265815AC2292B1E300609BA4 /* Mush.wav */,
 				262C9EBE225812C6007CBBAA /* cardflip.wav */,
 				262C9EBD225812C6007CBBAA /* dingcorrect.wav */,
 				262C9EBF225812C6007CBBAA /* dingwrong.wav */,
@@ -342,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2679DCC8225B79280080BA26 /* Roboto-Medium.ttf in Resources */,
+				265815AD2292B1E300609BA4 /* Mush.wav in Resources */,
 				26406ECE22897C5D0044E2FC /* Mush.wav in Resources */,
 				2670354F22577A65008952A5 /* LaunchScreen.storyboard in Resources */,
 				2679DCC7225B79280080BA26 /* Roboto-Light.ttf in Resources */,

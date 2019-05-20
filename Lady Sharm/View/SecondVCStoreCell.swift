@@ -8,8 +8,13 @@
 
 import UIKit
 
+//MARK: - notification keys
+let firstThemeIsSelectedKey = "firstThemeIsSelected"
+let secondThemeIsSelectedKey = "secondThemeIsSelected"
+let thirdThemeIsSelectedKey = "thirdThemeIsSelected"
 
 class SecondVCStoreCell: UICollectionViewCell {
+    
     
     @IBOutlet weak var itemName: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
@@ -55,7 +60,6 @@ class SecondVCStoreCell: UICollectionViewCell {
         
         // MARK: ИСПРАВИТЬ
         self.delegate.didTapStoreCellWithId(productId: (shopMenuModel?.id)!)
-        
         
         
         
