@@ -29,12 +29,12 @@ class StoreViewController: BasedTutorialViewController {
         
         collectionViewOutlet.delegate = self
         collectionViewOutlet.dataSource = self
-
-       // fBO.setBackgroundImage(UIImage(named: "btnByu"), for: .normal)
         
-       // UserDefaults.standard.object(forKey: "priceLabelText") ?? "5000"
+        setupLabelsColorsAndText()
         
-       setupLabelsColorsAndText()
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(swipe:)))
+        leftSwipe.direction = UISwipeGestureRecognizer.Direction.left
+        self.view.addGestureRecognizer(leftSwipe)
         
         
     } // end of vieDidLoad
@@ -47,16 +47,13 @@ class StoreViewController: BasedTutorialViewController {
         
         // MARK: Text labels
         pointsLabelStore.text = text
-       // let stringScore = String(scores.score)
         
     }
-    
 }
 
 
  extension StoreViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       // return shopMenuArray.count
         
         return shopMenuArray.count
     }
@@ -66,30 +63,9 @@ class StoreViewController: BasedTutorialViewController {
         
         cell.delegate = self
      
-        
-       // cell.imageViewCell.image = UIImage(named: "bg2Sm")
-      //  cell.index(ofAccessibilityElement: self)
-       // cell.imageViewCell.image = arrayOfImages[indexPath.row]
-       // cell.descriptionLabel.text = arrayOfLabels[indexPath.row]
-       //cell.buttonCellOutlet.setBackgroundImage(UIImage(named: arrayOfButtons[indexPath.row]), for: .normal)
-        
         cell.shopMenuModel = shopMenuArray[indexPath.row]
         
         let intPriceCellLabel = cell.priceLabel.text
-        
-
-     /*  if (Int(text)! < (Int(cell.priceLabel.text!)!)) && (cell.buttonCellOutlet.currentBackgroundImage == UIImage(named: "btnBuy")) {
-            cell.buttonCellOutlet.isEnabled = false
-        
-            // MARK: Прописать алерт контроллер, убрать недоступность
-        } */
-        
-        /*  if ((Int(intPriceCellLabel!)!) <= Int(text)!) && Int(intPriceCellLabel!) != 0 {
-          //  text = String(Int(pointsLabelStore.text!)! - 5000)
-           // pointsLabelStore.text = text
-        } */
-        
-     //   cell.buttonCellAction(cell.buttonCellOutlet)
         
         return cell
         
@@ -104,5 +80,14 @@ extension StoreViewController: StoreCellDelegate {
         
         storeManager.handleProduct(productId: productId)
         
+    }
+}
+
+extension StoreViewController {
+    @objc func swipeAction(swipe: UISwipeGestureRecognizer) {
+        
+        if swipe.direction.rawValue == UISwipeGestureRecognizer.Direction.left.rawValue {
+            performSegue(withIdentifier: "storeToSecondVC", sender: self)
+        }
     }
 }

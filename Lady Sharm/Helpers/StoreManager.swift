@@ -14,7 +14,7 @@ class StoreManager {
     func handleProduct(productId: Int) -> Void {
         
         //get product object by id
-        var product: Product! = ProductProvider.getProductById(id: productId)
+        let product: Product! = ProductProvider.getProductById(id: productId)
         
         //get purchased products from userdefaults
         // if productId is purchased -> change style
@@ -46,6 +46,7 @@ class StoreManager {
     func changeWallpaper(wallpaperSkinModel: Product) {
         //TODO: прописать логику
         print("меняем обои на продакт \(wallpaperSkinModel.imageName)")
+        ThemeStyleSingleton.shared.setCurrentCardSkin(themeSkin: wallpaperSkinModel)
     }
     
     

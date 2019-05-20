@@ -11,7 +11,7 @@ import MessageUI
 import FBSDKLoginKit
 
 
-class SettingsViewController: BasedTutorialViewController {
+class SettingsViewController: UIViewController {
     
     
 //  var loginButtonSVC = FBButtonClass()

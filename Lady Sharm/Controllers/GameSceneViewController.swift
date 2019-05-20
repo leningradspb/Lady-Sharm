@@ -14,16 +14,12 @@ let keyOne   = "First image"
 let keyTwo   = "Second image"
 let keyTthee = "Third image"
 
-class GameSceneViewController: UIViewController {
+class GameSceneViewController: BasedTutorialViewController {
     
-    let skinOne = "skin1"
-    let skinTwo = "skin2"
-    let skinThree = "skin3"
-    var currentSkin = ""
+    
     
     let firstTapped     = Notification.Name(rawValue: keyOne)
-    let secondTapped    = Notification.Name(rawValue: keyTwo)
-    let thirdTapped     = Notification.Name(rawValue: keyTthee)
+    
     
 //    deinit {
 //        NotificationCenter.default.removeObserver(self)
@@ -78,9 +74,9 @@ class GameSceneViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        
-        
-        // вызвать гет кардс(массив карт) и передать данные в вспомогательную переменную
+        //MARK: ВОзможно, расскоментить;
+//        let themeSkin: Product =  ThemeStyleSingleton.shared.getCurrentThemeSkin()
+//        basedImageName = themeSkin.imageName
      
 
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerFunc), userInfo: nil, repeats: true)
@@ -94,30 +90,6 @@ class GameSceneViewController: UIViewController {
         setupColors()
        // createObservers()
     } // конец viewDidLoad
-    
-    
-  /*  func createObservers() {
-        
-        // first
-        NotificationCenter.default.addObserver(self, selector: #selector(GameSceneViewController.updateImage(notification:)), name: firstTapped, object: nil)
-    }
-    
-    @objc func updateImage(notification: NSNotification) {
-        
-        // TODO: НУЖНО ДОБАВИТЬ ИФЫ ПО ВЫБОРУ БЭКИМЭДЖА!!! СЕЙЧАС ПУСТОТА
-        print(" ВОШЕЛ")
-        
-        if notification.name == thirdTapped {
-            currentSkin = skinThree
-        } else if notification.name == secondTapped {
-            currentSkin = skinTwo
-        } else if notification.name == firstTapped {
-            currentSkin = skinOne
-        }
-        
-        
-        //cell.backImage.image = UIImage(named: "skin1")
-    } */
    
     
     func setupColors() {

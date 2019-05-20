@@ -13,6 +13,13 @@ class BasedTutorialViewController: UIViewController {
     
     
     
+    let themeSkin: Product! =  ThemeStyleSingleton.shared.getCurrentThemeSkin()
+    
+    
+    
+    
+    
+    
     var backgroundImageView = UIImageView()
     
     var basedImageName = ""
@@ -21,11 +28,17 @@ class BasedTutorialViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if UserDefaults.standard.object(forKey: keyForBasedController) == nil {
-            basedImageName = "bgs"
-        } else {
-            basedImageName = "bg1"
-        }
+        
+        basedImageName = ThemeStyleSingleton.shared.getCurrentThemeSkin().imageName
+        
+        
+//        // TODO: Написана фигня
+//        if UserDefaults.standard.object(forKey: keyForBasedController) == nil {
+//
+//        } else {
+////            basedImageName = themeSkin.imageName
+//            basedImageName = "bg2"
+//        }
 
         setupBackgroundImage()
         

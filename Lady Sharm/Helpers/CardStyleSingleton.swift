@@ -14,7 +14,7 @@ class CardStyleSingleton: NSObject {
     static let shared = CardStyleSingleton()
     
     
-    var cardSkin: Product?
+    var cardSkin: Product!
     
     
     private override init() {
@@ -22,7 +22,15 @@ class CardStyleSingleton: NSObject {
     }
     
     func getCurrentCardSkin() -> Product {
-        return cardSkin!
+        
+     //   if cardSkin?.imageName == nil {
+           // return cardSkin?.imageName = "skin1"
+     //   }
+        if cardSkin == nil {
+            return ProductProvider.getDefaultSkinProduct()
+        } else {
+            return cardSkin
+        }
     }
     
     func setCurrentCardSkin(cardSkin: Product) -> Void {

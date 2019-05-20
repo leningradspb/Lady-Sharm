@@ -60,16 +60,11 @@ class StoreCollectionViewCell: UICollectionViewCell {
     @IBAction func buttonCellAction(_ sender: UIButton) {
         
         
-        let name        = Notification.Name(rawValue: keyOne)
-     //   let nameTwo     = Notification.Name(rawValue: keyTwo)
-       // let nameThree   = Notification.Name(rawValue: keyTthee)
+      //  let name        = Notification.Name(rawValue: keyOne)
+    
         
-        NotificationCenter.default.post(name: name, object: nil)
-        UserDefaults.standard.set(keyForBasedController, forKey: keyForBasedController)
-       // NotificationCenter.default.post(name: nameTwo, object: nil)
-      //  NotificationCenter.default.post(name: nameThree, object: nil)
-        
-//        card.backImageName = "skin2"
+      
+     
         
         
         self.delegate.didTapStoreCellWithId(productId: (shopMenuModel?.id)!)

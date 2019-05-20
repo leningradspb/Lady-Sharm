@@ -107,6 +107,13 @@ class ViewController: BasedTutorialViewController {
         // MARK: проверка туториала
     tutorialStatus = UserDefaults.standard.integer(forKey: "tut")
         
+        
+        ///////////////////////////////////////////////////////
+//        let themeSkin: Product =  ThemeStyleSingleton.shared.getCurrentThemeSkin()
+//        basedImageName = themeSkin.imageName
+//        print("ИМЯ КАРИТИНКИ СЕЙЧАС \(basedImageName)")
+        ///////////////////////////////////////////
+        
         if(FBSDKAccessToken.current() != nil) {
             let buttonTextLogin = NSAttributedString(string: "Выйти из ФБ")
             fbLoginButton.setAttributedTitle(buttonTextLogin, for: .normal)
@@ -133,48 +140,9 @@ class ViewController: BasedTutorialViewController {
         
         fetchProfile()
         
-        createObservers()
-        
-     //   self.imageView.image =
+     
        
     } // end ViewDidLoad
-    
- //   let firstTapped     = Notification.Name(rawValue: keyOne)
-    func createObservers() {
-        
-        // first
-        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.updateImage(notification:)), name: firstTapped, object: nil)
-    }
-    
-    @objc func updateImage(notification: NSNotification) {
-        
-        
-        print(" ВОШЕЛ")
-        
-            viewBackgroundImage.image = UIImage(named: "bg1")
-           // view.addSubview(imageView)
-        
-        
-       // cell.backImage.image = UIImage(named: "skin1")
-    }
-    
-    // MARK: FB Button
-/*    func setupFBloginButton() {
-        fbLoginButton.readPermissions = ["public_profile", "email"]
-       let image = UIImage(named: "btnLoginWithFb")
-       
-        
-        fbLoginButton.setBackgroundImage(image, for: .normal)
-        fbLoginButton.setBackgroundImage(image, for: .selected)
-        fbLoginButton.setBackgroundImage(image, for: .application)
-        fbLoginButton.imageView?.isHidden = true
-        fbLoginButton.titleLabel?.isHidden = true
-        
-        
-        fbLoginButton.delegate = self
-       
-    } */
-    
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
