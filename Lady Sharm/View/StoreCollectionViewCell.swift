@@ -14,13 +14,14 @@ protocol StoreCellDelegate {
     func didTapStoreCellWithId(productId: Int) -> Void
 }
 
+//MARK: - notification keys
+let labelDidChanged = "labelDidChanged"
+let labelDidChangedFromSecondID = "labelDidChangedFromSecondID"
+let labelDidChangedFromThirdID = "labelDidChangedFromThirdID"
+
 
 class StoreCollectionViewCell: UICollectionViewCell {
     
-    
-    //var buyingSettings = ByuingSettings()
-    //var cardModel = CardModel()
-//    var card = Card()
     
     var vcPoints = ViewController()
     var priceOfIcon = 500
@@ -59,15 +60,24 @@ class StoreCollectionViewCell: UICollectionViewCell {
     
     @IBAction func buttonCellAction(_ sender: UIButton) {
         
+        self.delegate.didTapStoreCellWithId(productId: (shopMenuModel?.id)!)
         
-      //  let name        = Notification.Name(rawValue: keyOne)
-    
+        
+        if shopMenuModel?.id == 2 && (Int(priceLabel.text!)!) == 5000 {
+            
+            
+//            priceLabel.text = "0"
+//            buttonCellOutlet.setBackgroundImage(UIImage(named: "btnInstalled"), for: .normal)
+//            
+//        } else if shopMenuModel?.id == 5 && (Int(priceLabel.text!)!) == 0 {
+//            buttonCellOutlet.setBackgroundImage(UIImage(named: "btnInstalled"), for: .normal)
+            
+            
+               // buttonCellOutlet.setBackgroundImage(UIImage(named: "btnInstall"), for: .normal)
+              
+        }
         
       
-     
-        
-        
-        self.delegate.didTapStoreCellWithId(productId: (shopMenuModel?.id)!)
         
     }// конец кнопки
     

@@ -48,6 +48,7 @@
 		2679DCC8225B79280080BA26 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2679DCC3225B79280080BA26 /* Roboto-Medium.ttf */; };
 		2679DCCA225B7A900080BA26 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2679DCC9225B7A900080BA26 /* Roboto-Regular.ttf */; };
 		2688233E225A26BF00D29FA9 /* Scores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2688233D225A26BF00D29FA9 /* Scores.swift */; };
+		26A96FD62292F48B000ADCDB /* PurchasedProductsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A96FD52292F48B000ADCDB /* PurchasedProductsManager.swift */; };
 		26B1AB7C2270AA1600628781 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1AB7B2270AA1600628781 /* Shop.swift */; };
 		26B1AB7E2270AB4000628781 /* Thems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1AB7D2270AB4000628781 /* Thems.swift */; };
 		26BAD01B228DB26F001FDCC4 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BAD01A228DB26F001FDCC4 /* StoreManager.swift */; };
@@ -104,6 +105,7 @@
 		2679DCC3225B79280080BA26 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		2679DCC9225B7A900080BA26 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		2688233D225A26BF00D29FA9 /* Scores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scores.swift; sourceTree = "<group>"; };
+		26A96FD52292F48B000ADCDB /* PurchasedProductsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasedProductsManager.swift; sourceTree = "<group>"; };
 		26B1AB7B2270AA1600628781 /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
 		26B1AB7D2270AB4000628781 /* Thems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thems.swift; sourceTree = "<group>"; };
 		26BAD01A228DB26F001FDCC4 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 				26BAD01C228DB3B1001FDCC4 /* CardStyleSingleton.swift */,
 				26388228228EE7BD00CEF517 /* ThemeStyleSingleton.swift */,
 				26BAD022228DBF2D001FDCC4 /* ProductProvider.swift */,
+				26A96FD52292F48B000ADCDB /* PurchasedProductsManager.swift */,
 				26BAD01A228DB26F001FDCC4 /* StoreManager.swift */,
 			);
 			path = Helpers;
@@ -450,6 +453,7 @@
 				2688233E225A26BF00D29FA9 /* Scores.swift in Sources */,
 				26BAD023228DBF2D001FDCC4 /* ProductProvider.swift in Sources */,
 				26BAD01B228DB26F001FDCC4 /* StoreManager.swift in Sources */,
+				26A96FD62292F48B000ADCDB /* PurchasedProductsManager.swift in Sources */,
 				2670356422578178008952A5 /* GameSceneViewController.swift in Sources */,
 				267035662257818D008952A5 /* EndGameViewController.swift in Sources */,
 				26B1AB7C2270AA1600628781 /* Shop.swift in Sources */,

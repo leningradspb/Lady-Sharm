@@ -320,14 +320,26 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzz-Vy-Ivl">
+                                <rect key="frame" x="448" y="8" width="100" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Jwx-MM-8gC"/>
+                                    <constraint firstAttribute="height" constant="24" id="lbG-3T-XKf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="M2v-Sy-92v" firstAttribute="trailing" secondItem="wCg-xu-Ypa" secondAttribute="trailing" id="6xo-RG-AVZ"/>
                             <constraint firstItem="q29-sE-W4d" firstAttribute="top" secondItem="M2v-Sy-92v" secondAttribute="top" constant="80" id="C5c-Ch-NzZ"/>
+                            <constraint firstItem="nzz-Vy-Ivl" firstAttribute="top" secondItem="M2v-Sy-92v" secondAttribute="top" constant="8" id="En4-6e-WJM"/>
                             <constraint firstItem="wCg-xu-Ypa" firstAttribute="leading" secondItem="M2v-Sy-92v" secondAttribute="leading" id="JGZ-kZ-QQz"/>
                             <constraint firstItem="2iO-xb-NMN" firstAttribute="top" secondItem="M2v-Sy-92v" secondAttribute="top" constant="8" id="KDw-SF-YgA"/>
                             <constraint firstItem="2iO-xb-NMN" firstAttribute="centerX" secondItem="0vt-ZM-6pJ" secondAttribute="centerX" id="TnY-gn-f5d"/>
+                            <constraint firstItem="M2v-Sy-92v" firstAttribute="trailing" secondItem="nzz-Vy-Ivl" secondAttribute="trailing" constant="20" id="Z06-ZP-tf5"/>
                             <constraint firstItem="M2v-Sy-92v" firstAttribute="bottom" secondItem="VDr-fm-7Ce" secondAttribute="bottom" id="grq-Iw-bku"/>
                             <constraint firstItem="VDr-fm-7Ce" firstAttribute="centerX" secondItem="0vt-ZM-6pJ" secondAttribute="centerX" id="ofn-ob-CFV"/>
                             <constraint firstItem="q29-sE-W4d" firstAttribute="leading" secondItem="M2v-Sy-92v" secondAttribute="leading" constant="16" id="p9m-p3-6NB"/>
@@ -339,6 +351,7 @@
                     <connections>
                         <outlet property="collectionView" destination="wCg-xu-Ypa" id="b08-WT-hPT"/>
                         <outlet property="label" destination="2iO-xb-NMN" id="KJE-ti-DtW"/>
+                        <outlet property="mainPointsLabel" destination="nzz-Vy-Ivl" id="d3S-2b-OWK"/>
                         <segue destination="HOY-k8-wC6" kind="presentation" identifier="secondToStoreVC" modalTransitionStyle="crossDissolve" id="OXU-bt-qfs"/>
                     </connections>
                 </viewController>

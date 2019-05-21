@@ -15,7 +15,6 @@ let thirdThemeIsSelectedKey = "thirdThemeIsSelected"
 
 class SecondVCStoreCell: UICollectionViewCell {
     
-    
     @IBOutlet weak var itemName: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBAction func storeBA(_ sender: UIButton) {
@@ -51,15 +50,18 @@ class SecondVCStoreCell: UICollectionViewCell {
     @IBAction func buttonCellAction(_ sender: UIButton) {
         
         
-//        let name        = Notification.Name(rawValue: keyOne)
-//
-//
-//        NotificationCenter.default.post(name: name, object: nil)
-//        UserDefaults.standard.set(keyForBasedController, forKey: keyForBasedController)
-      
-        
-        // MARK: ИСПРАВИТЬ
         self.delegate.didTapStoreCellWithId(productId: (shopMenuModel?.id)!)
+        
+//        if shopMenuModel?.id == 5 && (Int(priceLabel.text!)!) == 5000 {
+//            
+//            
+//            priceLabel.text = "0"
+//            storeBO.setBackgroundImage(UIImage(named: "btnInstalled"), for: .normal)
+//            
+//        } else if shopMenuModel?.id == 5 && (Int(priceLabel.text!)!) == 0 {
+//            storeBO.setBackgroundImage(UIImage(named: "btnInstalled"), for: .normal)
+//            
+//        }
         
         
         

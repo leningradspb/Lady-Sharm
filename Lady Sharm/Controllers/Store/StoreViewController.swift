@@ -8,9 +8,13 @@
 
 import UIKit
 
+
+
 class StoreViewController: BasedTutorialViewController {
     
     var fPointsInt = 0
+    
+    var newPoints = 0
     
     // отвечает за очки
     var text    = String()
@@ -36,6 +40,9 @@ class StoreViewController: BasedTutorialViewController {
         leftSwipe.direction = UISwipeGestureRecognizer.Direction.left
         self.view.addGestureRecognizer(leftSwipe)
         
+        createObserversToLabel()
+        
+      //  text = "500000"
         
     } // end of vieDidLoad
     
@@ -49,7 +56,39 @@ class StoreViewController: BasedTutorialViewController {
         pointsLabelStore.text = text
         
     }
-}
+    
+    
+    //MARK: - OBSERVERS for update POINTS.
+    func createObserversToLabel() {
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updatePointsLabel(notification:)), name: Notification.Name(rawValue: labelDidChanged), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updatePointsLabel(notification:)), name: Notification.Name(rawValue: labelDidChangedFromSecondID), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updatePointsLabel(notification:)), name: Notification.Name(rawValue: labelDidChangedFromThirdID), object: nil)
+        
+    }
+    
+    @objc func updatePointsLabel(notification: NSNotification) {
+        
+        if notification.name == Notification.Name(rawValue: labelDidChanged) {
+            //TODO: Изменить отутлек кнопки в ячейке
+        } else if notification.name == Notification.Name(rawValue: labelDidChangedFromSecondID) {
+            newPoints = Int(text)! - 5000
+            text = String(newPoints)
+            pointsLabelStore.text = text
+        } else if notification.name == Notification.Name(rawValue: labelDidChangedFromThirdID) {
+            newPoints = Int(text)! - 5000
+            text = String(newPoints)
+            pointsLabelStore.text = text
+        }
+        
+    }
+    
+    
+    
+    
+}// endOfClass
 
 
  extension StoreViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -65,7 +104,25 @@ class StoreViewController: BasedTutorialViewController {
      
         cell.shopMenuModel = shopMenuArray[indexPath.row]
         
-        let intPriceCellLabel = cell.priceLabel.text
+        //set buttons
+        if(true) {
+            //if already bought
+            
+            if(CardStyleSingleton.shared.getCurrentCardSkin().id == shopMenuArray[indexPath.row].id) {
+                //if already set
+                cell.buttonCellOutlet.setBackgroundImage(UIImage(named: "btnInstalled"), for: .normal)
+            } else {
+                //if not set
+                cell.buttonCellOutlet.setBackgroundImage(UIImage(named: "btnInstall"), for: .normal)
+            }
+            
+        } else {
+            //if if not bought
+            cell.buttonCellOutlet.setBackgroundImage(UIImage(named: "btnBuy"), for: .normal)
+        }
+        
+        
+//        let intPriceCellLabel = cell.priceLabel.text
         
         return cell
         
@@ -80,6 +137,20 @@ extension StoreViewController: StoreCellDelegate {
         
         storeManager.handleProduct(productId: productId)
         
+        let name1 = Notification.Name(rawValue: labelDidChanged)
+        let name2 = Notification.Name(rawValue: labelDidChangedFromSecondID)
+        let name3 = Notification.Name(rawValue: labelDidChangedFromThirdID)
+        
+        if productId == 1 {
+            NotificationCenter.default.post(name: name1, object: nil)
+        } else if productId == 2 {
+            NotificationCenter.default.post(name: name2, object: nil)
+        } else if productId == 3 {
+            NotificationCenter.default.post(name: name3, object: nil)
+        }
+        
+        self.collectionViewOutlet.reloadData()
+        
     }
 }
 
@@ -88,6 +159,13 @@ extension StoreViewController {
         
         if swipe.direction.rawValue == UISwipeGestureRecognizer.Direction.left.rawValue {
             performSegue(withIdentifier: "storeToSecondVC", sender: self)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "storeToSecondVC" {
+            let dvc = segue.destination as! StoreSecondVC
+            dvc.text = text
         }
     }
 }

@@ -16,9 +16,6 @@ class ViewController: BasedTutorialViewController {
     
     @IBOutlet weak var viewBackgroundImage: UIImageView!
     
-    let firstTapped     = Notification.Name(rawValue: keyOne)
-    
-    let score = Scores().score
     @IBAction func toShop(_ sender: UIButton) {
         //(UserDefaults.standard.integer(forKey: "Scores")
         performSegue(withIdentifier: "showStore", sender: self)
@@ -184,11 +181,18 @@ class ViewController: BasedTutorialViewController {
         
         if let lblFromStore = segue.source as? StoreViewController {
         //UserDefaults.standard.integer(forKey: "Scores")
-            if UserDefaults.standard.integer(forKey: "Scores") != Int(lblFromStore.text) {
+            // MARK: снятие денег
+            currentPoints = Int(lblFromStore.text)!
+            
+            UserDefaults.standard.set(currentPoints, forKey: "Scores")
+            
+            allPointsLabel.text = String(currentPoints)
+            
+           /* if UserDefaults.standard.integer(forKey: "Scores") != Int(lblFromStore.text) {
             currentPoints = UserDefaults.standard.integer(forKey: "Scores") - 5000
                 allPointsLabel.text = "ОЧКИ: \(currentPoints)"
                 UserDefaults.standard.set(currentPoints, forKey: "Scores")
-            }
+            } */
         }
         
         guard let lblFromUnwind = segue.source as? EndGameViewController else { return }

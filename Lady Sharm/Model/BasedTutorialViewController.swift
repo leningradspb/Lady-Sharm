@@ -42,7 +42,7 @@ class BasedTutorialViewController: UIViewController {
         
     }
     
-    //MARK: - OBSERVERS for update imageViewImage. 
+    //MARK: - OBSERVERS for update imageViewImage.
     func createObservers() {
         //firstImage
         NotificationCenter.default.addObserver(self, selector: #selector(updateImageViewImage(notification:)), name: Notification.Name(rawValue: firstThemeIsSelectedKey), object: nil)
