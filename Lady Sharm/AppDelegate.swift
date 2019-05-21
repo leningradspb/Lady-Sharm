@@ -21,6 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FBSDKApplicationDelegate.sharedInstance()?.application(application, didFinishLaunchingWithOptions: launchOptions)
         
+        
+        
+        // get purchased products
+        // if empty -> set
+        
         return true
     }
 

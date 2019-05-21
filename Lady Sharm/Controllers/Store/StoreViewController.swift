@@ -77,6 +77,8 @@ class StoreViewController: BasedTutorialViewController {
             newPoints = Int(text)! - 5000
             text = String(newPoints)
             pointsLabelStore.text = text
+            //MARK: - ??? тут добавляется запись в Userdefaults?
+            
         } else if notification.name == Notification.Name(rawValue: labelDidChangedFromThirdID) {
             newPoints = Int(text)! - 5000
             text = String(newPoints)
@@ -105,7 +107,7 @@ class StoreViewController: BasedTutorialViewController {
         cell.shopMenuModel = shopMenuArray[indexPath.row]
         
         //set buttons
-        if(true) {
+        if(PurchasedProductsManager().checkIfProductPurchased(product: cell.shopMenuModel!)) {
             //if already bought
             
             if(CardStyleSingleton.shared.getCurrentCardSkin().id == shopMenuArray[indexPath.row].id) {
@@ -137,17 +139,7 @@ extension StoreViewController: StoreCellDelegate {
         
         storeManager.handleProduct(productId: productId)
         
-        let name1 = Notification.Name(rawValue: labelDidChanged)
-        let name2 = Notification.Name(rawValue: labelDidChangedFromSecondID)
-        let name3 = Notification.Name(rawValue: labelDidChangedFromThirdID)
         
-        if productId == 1 {
-            NotificationCenter.default.post(name: name1, object: nil)
-        } else if productId == 2 {
-            NotificationCenter.default.post(name: name2, object: nil)
-        } else if productId == 3 {
-            NotificationCenter.default.post(name: name3, object: nil)
-        }
         
         self.collectionViewOutlet.reloadData()
         

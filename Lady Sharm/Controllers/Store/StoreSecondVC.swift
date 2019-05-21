@@ -49,23 +49,26 @@ class StoreSecondVC: BasedTutorialViewController {
     //MARK: - OBSERVERS for update POINTS.
     func createObserversToLabel() {
         
-        NotificationCenter.default.addObserver(self, selector: #selector(updatePointsLabel(notification:)), name: Notification.Name(rawValue: labelDidChanged), object: nil)
+        print("I added observers")
         
-        NotificationCenter.default.addObserver(self, selector: #selector(updatePointsLabel(notification:)), name: Notification.Name(rawValue: labelDidChangedFromSecondID), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updatePointsLabel(notification:)), name: Notification.Name(rawValue: imageDidChanged), object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(updatePointsLabel(notification:)), name: Notification.Name(rawValue: labelDidChangedFromThirdID), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updatePointsLabel(notification:)), name: Notification.Name(rawValue: imageDidChangedFromSecondID), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updatePointsLabel(notification:)), name: Notification.Name(rawValue: imagelDidChangedFromThirdID), object: nil)
         
     }
     
     @objc func updatePointsLabel(notification: NSNotification) {
-        
-        if notification.name == Notification.Name(rawValue: labelDidChanged) {
+        print("I have caught notification")
+        if notification.name == Notification.Name(rawValue: imageDidChanged) {
             //TODO: Изменить отутлек кнопки в ячейке
-        } else if notification.name == Notification.Name(rawValue: labelDidChangedFromSecondID) {
+        } else if notification.name == Notification.Name(rawValue: imageDidChangedFromSecondID) {
             newPoints = Int(text)! - 5000
+            //MARK: - ??? тут добавляется запись в Userdefaults?
             text = String(newPoints)
             mainPointsLabel.text = text
-        } else if notification.name == Notification.Name(rawValue: labelDidChangedFromThirdID) {
+        } else if notification.name == Notification.Name(rawValue: imagelDidChangedFromThirdID) {
             newPoints = Int(text)! - 5000
             text = String(newPoints)
             mainPointsLabel.text = text
@@ -107,18 +110,18 @@ extension StoreSecondVC: UICollectionViewDelegate, UICollectionViewDataSource {
         
         
         //MARK: ПОСЛЕ ЭТОГО НУЖНО ОБЯЗАТЕЛЬНО СДЕЛАТЬ self.collectionView.reloadData() in didTapStoreCellWithId(productId: Int)
-        if(true) {
+        if(PurchasedProductsManager().checkIfProductPurchased(product: cell.shopMenuModel!)) {
             //if already bought
             
             if(ThemeStyleSingleton.shared.getCurrentThemeSkin().id == shopMenuArray[indexPath.row].id) {
+                
                 //if already set
                 cell.storeBO.setBackgroundImage(UIImage(named: "btnInstalled"), for: .normal)
-                
+             
             } else {
                 //if not set
-                cell.storeBO.setBackgroundImage(UIImage(named: "btnInstall"), for: .normal)
-            }
-            
+                    cell.storeBO.setBackgroundImage(UIImage(named: "btnInstall"), for: .normal)
+                }
         } else {
             //if if not bought
             cell.storeBO.setBackgroundImage(UIImage(named: "btnBuy"), for: .normal)
@@ -137,20 +140,30 @@ extension StoreSecondVC: StoreCellDelegate {
         let storeManager = StoreManager()
         
         storeManager.handleProduct(productId: productId)
-        //MARK: - Notification POST (для обновления backgroundImageView в BasedVC)
-        let name1 = Notification.Name(rawValue: firstThemeIsSelectedKey)
-        let name2 = Notification.Name(rawValue: secondThemeIsSelectedKey)
-        let name3 = Notification.Name(rawValue: thirdThemeIsSelectedKey)
-        if productId == 4 {
-        NotificationCenter.default.post(name: name1, object: nil)
-        NotificationCenter.default.post(name: Notification.Name(rawValue: labelDidChanged), object: nil)
-        } else if productId == 5 {
-            NotificationCenter.default.post(name: name2, object: nil)
-              NotificationCenter.default.post(name: Notification.Name(rawValue: labelDidChangedFromSecondID), object: nil)
-        } else if productId == 6 {
-            NotificationCenter.default.post(name: name3, object: nil)
-              NotificationCenter.default.post(name: Notification.Name(rawValue: labelDidChangedFromThirdID), object: nil)
-        }
+        
+        //MARK: - Если что-то пойдет не так с секонд вью контроллером, то раскоментить
+        /*
+ if Scores().getScores() >= 5000 {
+ 
+ let name4 = Notification.Name(rawValue: fourthThemeIsSelectedKey)
+ let name5 = Notification.Name(rawValue: fifthThemeIsSelectedKey)
+ let name6 = Notification.Name(rawValue: sixthThemeIsSelectedKey)
+ //                let name4 = Notification.Name(rawValue: imageDidChanged)
+ //                let name5 = Notification.Name(rawValue: imageDidChangedFromSecondID)
+ //                let name6 = Notification.Name(rawValue: imagelDidChangedFromThirdID)
+ 
+ if productId == 4 {
+ print("I have posted notification")
+ NotificationCenter.default.post(name: name4, object: nil)
+ NotificationCenter.default.post(name: Notification.Name(rawValue: imageDidChanged), object: nil)
+ } else if productId == 5 {
+ NotificationCenter.default.post(name: name5, object: nil)
+ NotificationCenter.default.post(name: Notification.Name(rawValue: imageDidChangedFromSecondID), object: nil)
+ } else if productId == 6 {
+ NotificationCenter.default.post(name: name6, object: nil)
+ NotificationCenter.default.post(name: Notification.Name(rawValue: imagelDidChangedFromThirdID), object: nil)
+ } */
+      
         
         self.collectionView.reloadData()
     }

@@ -18,6 +18,9 @@ protocol StoreCellDelegate {
 let labelDidChanged = "labelDidChanged"
 let labelDidChangedFromSecondID = "labelDidChangedFromSecondID"
 let labelDidChangedFromThirdID = "labelDidChangedFromThirdID"
+let imageDidChanged = "imageDidChanged"
+let imageDidChangedFromSecondID = "imageDidChangedFromSecondID"
+let imagelDidChangedFromThirdID = "imagelDidChangedFromThirdID"
 
 
 class StoreCollectionViewCell: UICollectionViewCell {
@@ -43,9 +46,6 @@ class StoreCollectionViewCell: UICollectionViewCell {
     }
     
     override func awakeFromNib() {
-        
-      //  buyingSettings.isInstalled = false
-       // buyingSettings.isByuing = false
         
         if UserDefaults.standard.object(forKey: "priceLabel.text") != nil {
         UserDefaults.standard.object(forKey: "priceLabel.text")

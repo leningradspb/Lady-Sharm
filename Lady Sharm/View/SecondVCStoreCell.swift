@@ -12,6 +12,9 @@ import UIKit
 let firstThemeIsSelectedKey = "firstThemeIsSelected"
 let secondThemeIsSelectedKey = "secondThemeIsSelected"
 let thirdThemeIsSelectedKey = "thirdThemeIsSelected"
+let fourthThemeIsSelectedKey = "fourthThemeIsSelectedKey"
+let fifthThemeIsSelectedKey = "fifthThemeIsSelectedKey"
+let sixthThemeIsSelectedKey = "sixthThemeIsSelectedKey"
 
 class SecondVCStoreCell: UICollectionViewCell {
     

@@ -15,6 +15,10 @@ class Scores {
             UserDefaults.standard.set(score, forKey: "Score")
             }
     }
+    
+    func getScores() -> Int{
+        return UserDefaults.standard.integer(forKey: "Score")
+    }
 
 }
 

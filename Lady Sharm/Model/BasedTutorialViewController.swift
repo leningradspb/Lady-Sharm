@@ -45,21 +45,21 @@ class BasedTutorialViewController: UIViewController {
     //MARK: - OBSERVERS for update imageViewImage.
     func createObservers() {
         //firstImage
-        NotificationCenter.default.addObserver(self, selector: #selector(updateImageViewImage(notification:)), name: Notification.Name(rawValue: firstThemeIsSelectedKey), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateImageViewImage(notification:)), name: Notification.Name(rawValue: imageDidChanged), object: nil)
         
         //secondImage
-         NotificationCenter.default.addObserver(self, selector: #selector(updateImageViewImage(notification:)), name: Notification.Name(rawValue: secondThemeIsSelectedKey), object: nil)
+         NotificationCenter.default.addObserver(self, selector: #selector(updateImageViewImage(notification:)), name: Notification.Name(rawValue: imageDidChangedFromSecondID), object: nil)
         //thirdImage
-         NotificationCenter.default.addObserver(self, selector: #selector(updateImageViewImage(notification:)), name: Notification.Name(rawValue: thirdThemeIsSelectedKey), object: nil)
+         NotificationCenter.default.addObserver(self, selector: #selector(updateImageViewImage(notification:)), name: Notification.Name(rawValue: imagelDidChangedFromThirdID), object: nil)
     }
     
    @objc func updateImageViewImage(notification: NSNotification) {
     
-    if notification.name == Notification.Name(rawValue: firstThemeIsSelectedKey) {
+    if notification.name == Notification.Name(rawValue: imageDidChanged) {
         backgroundImageView.image = UIImage(named: "bg")
-    } else if notification.name == Notification.Name(rawValue: secondThemeIsSelectedKey) {
+    } else if notification.name == Notification.Name(rawValue: imageDidChangedFromSecondID) {
         backgroundImageView.image = UIImage(named: "bg1")
-    } else if notification.name == Notification.Name(rawValue: thirdThemeIsSelectedKey) {
+    } else if notification.name == Notification.Name(rawValue: imagelDidChangedFromThirdID) {
         backgroundImageView.image = UIImage(named: "bg2")
     }
   

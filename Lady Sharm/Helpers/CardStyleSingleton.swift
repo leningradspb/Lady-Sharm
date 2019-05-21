@@ -23,9 +23,6 @@ class CardStyleSingleton: NSObject {
     
     func getCurrentCardSkin() -> Product {
         
-     //   if cardSkin?.imageName == nil {
-           // return cardSkin?.imageName = "skin1"
-     //   }
         if cardSkin == nil {
             return ProductProvider.getDefaultSkinProduct()
         } else {

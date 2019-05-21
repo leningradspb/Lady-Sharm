@@ -27,6 +27,7 @@ class ProductProvider {
         shopMenu2.buttonImageName = "btnBuy"
         shopMenu2.type = .skin
         shopMenu2.price = "5000"
+        //MARK: - или здесь устанавливается Userdefaults
         //shopMenu2.price = UserDefaults.standard.object(forKey: "priceLabel.text") as? String
         
         let shopMenu3 = Product()
@@ -35,7 +36,7 @@ class ProductProvider {
         shopMenu3.imageName = "skin3"
         shopMenu3.buttonImageName = "btnBuy"
         shopMenu3.type = .skin
-        shopMenu3.price = "50000"
+        shopMenu3.price = "5000"
         
         return [shopMenu, shopMenu2, shopMenu3]
     }
@@ -57,6 +58,7 @@ class ProductProvider {
         shopMenu5.buttonImageName = "btnBuy"
         shopMenu5.type = .wallpaper
         shopMenu5.price = "5000"
+        
        // shopMenu5.price = UserDefaults.standard.object(forKey: "priceLabel.text") as? String
         
         let shopMenu6 = Product()
@@ -65,7 +67,7 @@ class ProductProvider {
         shopMenu6.imageName = "bg2"
         shopMenu6.buttonImageName = "btnBuy"
         shopMenu6.type = .wallpaper
-        shopMenu6.price = "50000"
+        shopMenu6.price = "5000"
         
         return [shopMenu4, shopMenu5, shopMenu6]
     }
