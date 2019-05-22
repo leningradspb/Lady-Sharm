@@ -11,6 +11,8 @@ import Foundation
 
 class StoreManager {
     
+    var defaultsValue = UserDefaults.standard.integer(forKey: "Scores")
+    
     func handleProduct(productId: Int) -> Void {
         
         //get product object by id
@@ -46,6 +48,7 @@ class StoreManager {
                 } else if productId == 5 {
                     NotificationCenter.default.post(name: name5, object: nil)
                     NotificationCenter.default.post(name: Notification.Name(rawValue: imageDidChangedFromSecondID), object: nil)
+                    
                 } else if productId == 6 {
                     NotificationCenter.default.post(name: name6, object: nil)
                     NotificationCenter.default.post(name: Notification.Name(rawValue: imagelDidChangedFromThirdID), object: nil)
@@ -65,9 +68,10 @@ class StoreManager {
             
             // MARK: Scores().getScores() >= 5000
             //MARK: - Scores().score всегда 0
-            if  Scores().getScores() >= 0 {
-                print(Scores().getScores())
+            if  UserDefaults.standard.integer(forKey: "Scores") >= 5000 {
                
+               defaultsValue -= 5000
+                UserDefaults.standard.set(defaultsValue, forKey: "Scores")
                 
                 
             //purchase product
@@ -103,8 +107,10 @@ class StoreManager {
                 }
             
             purchaseProduct(product: product)
-            } else {
-                // АЛЕРТЫ тут?
+            } else if  UserDefaults.standard.integer(forKey: "Scores") < 5000 {
+                //MARK: - ALERT NOMONEY
+                NotificationCenter.default.post(name: Notification.Name(rawValue: "Nomoney"), object: nil)
+                NotificationCenter.default.post(name: Notification.Name(rawValue: "NomoneySecond"), object: nil)
             }
         }
         

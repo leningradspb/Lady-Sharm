@@ -18,7 +18,11 @@ class ThemePurchasedVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        viewOutlet.layer.cornerRadius = 20
+        viewOutlet.layer.borderWidth = 3
+        viewOutlet.clipsToBounds = true
+        viewOutlet.layer.borderColor = UIColor(red: 196/255, green: 152/255, blue: 3/255, alpha: 1).cgColor
+        label.textColor = UIColor(red: 250/255, green: 253/255, blue: 2/255, alpha: 1)
     }
     
 

@@ -64,6 +64,8 @@ class StoreSecondVC: BasedTutorialViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(updatePointsLabel(notification:)), name: Notification.Name(rawValue: labelDidChangedFromThirdID), object: nil)
         
+         NotificationCenter.default.addObserver(self, selector: #selector(updatePointsLabel(notification:)), name: Notification.Name(rawValue: "NomoneySecond"), object: nil)
+        
     }
 
     
@@ -83,6 +85,8 @@ class StoreSecondVC: BasedTutorialViewController {
             text = String(newPoints)
             mainPointsLabel.text = text
             performSegue(withIdentifier: "themePurchased", sender: self)
+        } else if notification.name == Notification.Name(rawValue: "NomoneySecond") {
+            performSegue(withIdentifier: "themesToNomoney", sender: self)
         }
         
     }

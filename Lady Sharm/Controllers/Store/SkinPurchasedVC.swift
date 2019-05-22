@@ -21,8 +21,9 @@ class SkinPurchasedVC: UIViewController {
         viewOutlet.layer.cornerRadius = 20
         viewOutlet.layer.borderWidth = 3
         viewOutlet.clipsToBounds = true
-        viewOutlet.layer.borderColor = UIColor(red: 196, green: 152, blue: 3, alpha: 1).cgColor
-        viewOutlet.backgroundColor = UIColor(red: 109, green: 27, blue: 60, alpha: 1)
+        viewOutlet.layer.borderColor = UIColor(red: 196/255, green: 152/255, blue: 3/255, alpha: 1).cgColor
+        label.textColor = UIColor(red: 250/255, green: 253/255, blue: 2/255, alpha: 1)
+       // viewOutlet.backgroundColor = UIColor(red: 109, green: 27, blue: 60, alpha: 1)
         
         //TODO: Label colors
         

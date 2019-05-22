@@ -12,6 +12,7 @@ import UIKit
 
 class StoreViewController: BasedTutorialViewController {
     
+    
     var fPointsInt = 0
     
     var newPoints = 0
@@ -60,12 +61,13 @@ class StoreViewController: BasedTutorialViewController {
     
     //MARK: - OBSERVERS for update POINTS.
     func createObserversToLabel() {
-        
         NotificationCenter.default.addObserver(self, selector: #selector(updatePointsLabel(notification:)), name: Notification.Name(rawValue: labelDidChanged), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(updatePointsLabel(notification:)), name: Notification.Name(rawValue: labelDidChangedFromSecondID), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(updatePointsLabel(notification:)), name: Notification.Name(rawValue: labelDidChangedFromThirdID), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updatePointsLabel(notification:)), name: Notification.Name(rawValue: "Nomoney"), object: nil)
         
     }
     
@@ -86,12 +88,18 @@ class StoreViewController: BasedTutorialViewController {
             pointsLabelStore.text = text
             // MARK: Show popover
             performSegue(withIdentifier: "skinPurchased", sender: self)
+        } else if notification.name ==  Notification.Name(rawValue: "Nomoney") {
+            performSegue(withIdentifier: "skinsToNomoney", sender: self)
+            
         }
+        
         
     }
     
     
-    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
     
 }// endOfClass
 

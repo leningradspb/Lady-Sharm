@@ -137,7 +137,6 @@ class ViewController: BasedTutorialViewController {
         
         fetchProfile()
         
-     print(Scores().getScores())
        
     } // end ViewDidLoad
     
@@ -154,6 +153,8 @@ class ViewController: BasedTutorialViewController {
     
     // MARK: Переход к туториалу
     override func viewDidAppear(_ animated: Bool) {
+        
+        
        // if allPointsLabel.text == "ОЧКИ: 0" {
         if tutorialStatus == 0 {
         performSegue(withIdentifier: "vcToTutorial", sender: self)
@@ -204,8 +205,10 @@ class ViewController: BasedTutorialViewController {
         allPointsLabel.text = "ОЧКИ: \(currentPoints)"
         
         UserDefaults.standard.set(currentPoints, forKey: "Scores")
-        UserDefaults.standard.set(Scores().getScores(), forKey: "Score")
-        UserDefaults.standard.set(Scores().score, forKey: "Score")
+        Scores().score = currentPoints
+        print(Scores().score)
+//        UserDefaults.standard.set(Scores().getScores(), forKey: "Score")
+//        UserDefaults.standard.set(Scores().score, forKey: "Score")
        // UserDefaults.standard.set(Scores().score, forKey: "Score")
         
     }
