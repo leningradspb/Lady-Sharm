@@ -77,12 +77,15 @@ class StoreViewController: BasedTutorialViewController {
             newPoints = Int(text)! - 5000
             text = String(newPoints)
             pointsLabelStore.text = text
-            //MARK: - ??? тут добавляется запись в Userdefaults?
-            
+            // MARK: Show popover
+            performSegue(withIdentifier: "skinPurchased", sender: self)
+
         } else if notification.name == Notification.Name(rawValue: labelDidChangedFromThirdID) {
             newPoints = Int(text)! - 5000
             text = String(newPoints)
             pointsLabelStore.text = text
+            // MARK: Show popover
+            performSegue(withIdentifier: "skinPurchased", sender: self)
         }
         
     }

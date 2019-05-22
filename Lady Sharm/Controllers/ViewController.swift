@@ -137,7 +137,7 @@ class ViewController: BasedTutorialViewController {
         
         fetchProfile()
         
-     
+     print(Scores().getScores())
        
     } // end ViewDidLoad
     
@@ -204,6 +204,8 @@ class ViewController: BasedTutorialViewController {
         allPointsLabel.text = "ОЧКИ: \(currentPoints)"
         
         UserDefaults.standard.set(currentPoints, forKey: "Scores")
+        UserDefaults.standard.set(Scores().getScores(), forKey: "Score")
+        UserDefaults.standard.set(Scores().score, forKey: "Score")
        // UserDefaults.standard.set(Scores().score, forKey: "Score")
         
     }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 //MARK: - notification keys
 let firstThemeIsSelectedKey = "firstThemeIsSelected"
@@ -17,6 +18,8 @@ let fifthThemeIsSelectedKey = "fifthThemeIsSelectedKey"
 let sixthThemeIsSelectedKey = "sixthThemeIsSelectedKey"
 
 class SecondVCStoreCell: UICollectionViewCell {
+    
+
     
     @IBOutlet weak var itemName: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
@@ -55,6 +58,10 @@ class SecondVCStoreCell: UICollectionViewCell {
         
         self.delegate.didTapStoreCellWithId(productId: (shopMenuModel?.id)!)
         
+        
+       // storeBO.addTarget(self, action: #selector(tapped), for: .touchUpInside)
+       // storeBO.addTarget(self, action: #selector(tapped()), for: .touchUpInside
+        
 //        if shopMenuModel?.id == 5 && (Int(priceLabel.text!)!) == 5000 {
 //            
 //            
@@ -69,7 +76,5 @@ class SecondVCStoreCell: UICollectionViewCell {
         
         
     }// конец кнопки
-    
-    
 }
 

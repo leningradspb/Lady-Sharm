@@ -31,8 +31,7 @@ class StoreManager {
                 break
             case .wallpaper?:
                 
-                
-                
+              
                 let name4 = Notification.Name(rawValue: fourthThemeIsSelectedKey)
                 let name5 = Notification.Name(rawValue: fifthThemeIsSelectedKey)
                 let name6 = Notification.Name(rawValue: sixthThemeIsSelectedKey)
@@ -53,6 +52,7 @@ class StoreManager {
                 }
                 
                 
+                
                 changeWallpaper(wallpaperSkinModel: product)
                 break
                 
@@ -63,9 +63,10 @@ class StoreManager {
         } else {
             
             
-            // MARK: Scores().getScores() >= 500
-            if Scores().getScores() >= 0 {
-                
+            // MARK: Scores().getScores() >= 5000
+            //MARK: - Scores().score всегда 0
+            if  Scores().getScores() >= 0 {
+                print(Scores().getScores())
                
                 
                 
@@ -80,15 +81,30 @@ class StoreManager {
             
             if productId == 1 {
                 NotificationCenter.default.post(name: name1, object: nil)
+                
                 // MARK: - или в Userdefaults записывается здесь?
                 // example  UserDefaults.standard.set(productId, forKey: "productId")
             } else if productId == 2 {
                 NotificationCenter.default.post(name: name2, object: nil)
+                
             } else if productId == 3 {
                 NotificationCenter.default.post(name: name3, object: nil)
             }
+                
+                if productId == 4 {
+                    NotificationCenter.default.post(name: name1, object: nil)
+                    
+                    // MARK: - или в Userdefaults записывается здесь?
+                    // example  UserDefaults.standard.set(productId, forKey: "productId")
+                } else if productId == 5 {
+                    NotificationCenter.default.post(name: name2, object: nil)
+                } else if productId == 6 {
+                    NotificationCenter.default.post(name: name3, object: nil)
+                }
             
             purchaseProduct(product: product)
+            } else {
+                // АЛЕРТЫ тут?
             }
         }
         

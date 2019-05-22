@@ -21,6 +21,9 @@
 		262C9EC2225812C6007CBBAA /* cardflip.wav in Resources */ = {isa = PBXBuildFile; fileRef = 262C9EBE225812C6007CBBAA /* cardflip.wav */; };
 		262C9EC3225812C6007CBBAA /* dingwrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 262C9EBF225812C6007CBBAA /* dingwrong.wav */; };
 		262C9EC4225812C6007CBBAA /* shuffle.wav in Resources */ = {isa = PBXBuildFile; fileRef = 262C9EC0225812C6007CBBAA /* shuffle.wav */; };
+		26380CE62295574900403DCC /* NoMoneyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26380CE52295574900403DCC /* NoMoneyVC.swift */; };
+		26380CE82295592200403DCC /* ThemePurchasedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26380CE72295592200403DCC /* ThemePurchasedVC.swift */; };
+		26380CEA2295593800403DCC /* SkinPurchasedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26380CE92295593800403DCC /* SkinPurchasedVC.swift */; };
 		26388222228ED31700CEF517 /* StoreSecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26388221228ED31700CEF517 /* StoreSecondVC.swift */; };
 		26388225228EDBB100CEF517 /* SecondVCStoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26388224228EDBB100CEF517 /* SecondVCStoreCell.swift */; };
 		26388229228EE7BD00CEF517 /* ThemeStyleSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26388228228EE7BD00CEF517 /* ThemeStyleSingleton.swift */; };
@@ -76,6 +79,9 @@
 		262C9EBE225812C6007CBBAA /* cardflip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardflip.wav; sourceTree = "<group>"; };
 		262C9EBF225812C6007CBBAA /* dingwrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dingwrong.wav; sourceTree = "<group>"; };
 		262C9EC0225812C6007CBBAA /* shuffle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shuffle.wav; sourceTree = "<group>"; };
+		26380CE52295574900403DCC /* NoMoneyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoMoneyVC.swift; sourceTree = "<group>"; };
+		26380CE72295592200403DCC /* ThemePurchasedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePurchasedVC.swift; sourceTree = "<group>"; };
+		26380CE92295593800403DCC /* SkinPurchasedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinPurchasedVC.swift; sourceTree = "<group>"; };
 		26388221228ED31700CEF517 /* StoreSecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreSecondVC.swift; sourceTree = "<group>"; };
 		26388224228EDBB100CEF517 /* SecondVCStoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVCStoreCell.swift; sourceTree = "<group>"; };
 		26388228228EE7BD00CEF517 /* ThemeStyleSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeStyleSingleton.swift; sourceTree = "<group>"; };
@@ -166,6 +172,9 @@
 			children = (
 				2611C71A22705B310084EBCC /* StoreViewController.swift */,
 				26388221228ED31700CEF517 /* StoreSecondVC.swift */,
+				26380CE52295574900403DCC /* NoMoneyVC.swift */,
+				26380CE92295593800403DCC /* SkinPurchasedVC.swift */,
+				26380CE72295592200403DCC /* ThemePurchasedVC.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -434,6 +443,7 @@
 				2670354222577A63008952A5 /* AppDelegate.swift in Sources */,
 				2602C322226C59B400675467 /* FirstTutorialViewController.swift in Sources */,
 				2611C722227064300084EBCC /* StoreCollectionViewCell.swift in Sources */,
+				26380CE82295592200403DCC /* ThemePurchasedVC.swift in Sources */,
 				2614F18D226CB02C00A0EC36 /* UIButtonExtention.swift in Sources */,
 				26E9FCD22271DF6D00889A8A /* ByuingSettings.swift in Sources */,
 				26388229228EE7BD00CEF517 /* ThemeStyleSingleton.swift in Sources */,
@@ -451,11 +461,13 @@
 				26703568225781A5008952A5 /* PrivacyViewController.swift in Sources */,
 				26388222228ED31700CEF517 /* StoreSecondVC.swift in Sources */,
 				2688233E225A26BF00D29FA9 /* Scores.swift in Sources */,
+				26380CE62295574900403DCC /* NoMoneyVC.swift in Sources */,
 				26BAD023228DBF2D001FDCC4 /* ProductProvider.swift in Sources */,
 				26BAD01B228DB26F001FDCC4 /* StoreManager.swift in Sources */,
 				26A96FD62292F48B000ADCDB /* PurchasedProductsManager.swift in Sources */,
 				2670356422578178008952A5 /* GameSceneViewController.swift in Sources */,
 				267035662257818D008952A5 /* EndGameViewController.swift in Sources */,
+				26380CEA2295593800403DCC /* SkinPurchasedVC.swift in Sources */,
 				26B1AB7C2270AA1600628781 /* Shop.swift in Sources */,
 				2670356E22578808008952A5 /* AudioPlayer.swift in Sources */,
 			);

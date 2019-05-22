@@ -20,6 +20,7 @@ class PurchasedProductsManager: NSObject {
         if  UserDefaults.standard.object(forKey: purchasedProductsUserDefaultsKey) == nil {
             var purchasedProducts: [Int] = Array()
             purchasedProducts.append(ProductProvider.getProductById(id: 1)!.id)
+            purchasedProducts.append(ProductProvider.getProductById(id: 4)!.id)
             UserDefaults.standard.set(purchasedProducts, forKey: purchasedProductsUserDefaultsKey)
             UserDefaults.standard.synchronize()
         }

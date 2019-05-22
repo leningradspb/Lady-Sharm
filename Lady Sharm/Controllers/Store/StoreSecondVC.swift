@@ -57,21 +57,32 @@ class StoreSecondVC: BasedTutorialViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(updatePointsLabel(notification:)), name: Notification.Name(rawValue: imagelDidChangedFromThirdID), object: nil)
         
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updatePointsLabel(notification:)), name: Notification.Name(rawValue: labelDidChanged), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updatePointsLabel(notification:)), name: Notification.Name(rawValue: labelDidChangedFromSecondID), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updatePointsLabel(notification:)), name: Notification.Name(rawValue: labelDidChangedFromThirdID), object: nil)
+        
     }
+
     
     @objc func updatePointsLabel(notification: NSNotification) {
         print("I have caught notification")
-        if notification.name == Notification.Name(rawValue: imageDidChanged) {
-            //TODO: Изменить отутлек кнопки в ячейке
-        } else if notification.name == Notification.Name(rawValue: imageDidChangedFromSecondID) {
-            newPoints = Int(text)! - 5000
-            //MARK: - ??? тут добавляется запись в Userdefaults?
-            text = String(newPoints)
-            mainPointsLabel.text = text
-        } else if notification.name == Notification.Name(rawValue: imagelDidChangedFromThirdID) {
+        // ПОМЕНЯТЬ НА imageDidiChange если не будет работать
+        if notification.name == Notification.Name(rawValue: labelDidChanged) {
+            //MARK: - Изменение отутлеt кнопки в ячейке
+        } else if notification.name == Notification.Name(rawValue: labelDidChangedFromSecondID) {
+            
             newPoints = Int(text)! - 5000
             text = String(newPoints)
             mainPointsLabel.text = text
+            performSegue(withIdentifier: "themePurchased", sender: self)
+        } else if notification.name == Notification.Name(rawValue: labelDidChangedFromThirdID) {
+            newPoints = Int(text)! - 5000
+            text = String(newPoints)
+            mainPointsLabel.text = text
+            performSegue(withIdentifier: "themePurchased", sender: self)
         }
         
     }
@@ -125,6 +136,8 @@ extension StoreSecondVC: UICollectionViewDelegate, UICollectionViewDataSource {
         } else {
             //if if not bought
             cell.storeBO.setBackgroundImage(UIImage(named: "btnBuy"), for: .normal)
+            
+
         }
         
         
