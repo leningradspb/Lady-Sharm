@@ -187,7 +187,7 @@ class ViewController: BasedTutorialViewController {
             
             UserDefaults.standard.set(currentPoints, forKey: "Scores")
             
-            allPointsLabel.text = String(currentPoints)
+            allPointsLabel.text = "ОЧКИ: \(currentPoints)"
             
            /* if UserDefaults.standard.integer(forKey: "Scores") != Int(lblFromStore.text) {
             currentPoints = UserDefaults.standard.integer(forKey: "Scores") - 5000

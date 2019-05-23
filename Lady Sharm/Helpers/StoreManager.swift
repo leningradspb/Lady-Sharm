@@ -23,8 +23,6 @@ class StoreManager {
         
         if(PurchasedProductsManager().checkIfProductPurchased(product: product)) {
             
-           
-           
             //change app style
             
             switch product.type {
@@ -32,15 +30,11 @@ class StoreManager {
                 changeCardSkin(cardSkinModel: product)
                 break
             case .wallpaper?:
-                
               
                 let name4 = Notification.Name(rawValue: fourthThemeIsSelectedKey)
                 let name5 = Notification.Name(rawValue: fifthThemeIsSelectedKey)
                 let name6 = Notification.Name(rawValue: sixthThemeIsSelectedKey)
-                //                let name4 = Notification.Name(rawValue: imageDidChanged)
-                //                let name5 = Notification.Name(rawValue: imageDidChangedFromSecondID)
-                //                let name6 = Notification.Name(rawValue: imagelDidChangedFromThirdID)
-                
+               
                 if productId == 4 {
                     print("I have posted notification")
                     NotificationCenter.default.post(name: name4, object: nil)
@@ -54,8 +48,6 @@ class StoreManager {
                     NotificationCenter.default.post(name: Notification.Name(rawValue: imagelDidChangedFromThirdID), object: nil)
                 }
                 
-                
-                
                 changeWallpaper(wallpaperSkinModel: product)
                 break
                 
@@ -65,14 +57,12 @@ class StoreManager {
             
         } else {
             
-            
             // MARK: Scores().getScores() >= 5000
             //MARK: - Scores().score всегда 0
             if  UserDefaults.standard.integer(forKey: "Scores") >= 5000 {
                
                defaultsValue -= 5000
                 UserDefaults.standard.set(defaultsValue, forKey: "Scores")
-                
                 
             //purchase product
             let name1 = Notification.Name(rawValue: labelDidChanged)
